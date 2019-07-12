@@ -15,7 +15,7 @@
 .yellow {
     height: 100px;
     width: 100px;
-    margin: 122px;
+    margin: 94px;
     margin-left: 8px;
     background-color: yellow;
     border-radius: 75px;
@@ -54,9 +54,15 @@
 
 /*-- Start Button --*/
 
+.container {
+    display: inline-block;
+    position: absolute;
+    margin-top: 400px;
+}
+
 .start_button {
     width: 100px;
-    margin-left: 50px;
+    margin-left: 46px;
     border-radius: 50px;
     border: 1px solid black;
     background-color: white;
@@ -66,12 +72,10 @@
 
 .strict_button {
     width: 100px;
-    margin-left: 100px;
+    margin-left: 98px;
     border-radius: 50px;
     border: 1px solid black;
     background-color: white;
 }
 
 /*-- On and Off Switch --*/
-
-
