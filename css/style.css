@@ -1,4 +1,4 @@
-/*--  Panel  --*/
+/*--  Panel starts  --*/
 
 .panel {
     height: 600px;
@@ -10,16 +10,19 @@
     border: 2px solid black;
 }
 
-/*--  Color Button  --*/
+/*--  Panel ends  --*/
+
+/*--  Color Button starts --*/
 
 .yellow {
     height: 100px;
     width: 100px;
-    margin: 94px;
+    margin: 46px;
     margin-left: 8px;
     background-color: yellow;
     border-radius: 75px;
     border: 2px solid black;
+    
 }
 
 .red {
@@ -52,7 +55,9 @@
     border: 2px solid black;
 }
 
-/*-- Start Button --*/
+/*--  Color Button ends --*/
+
+/*-- Start Button starts --*/
 
 .container {
     display: inline-block;
@@ -66,9 +71,19 @@
     border-radius: 50px;
     border: 1px solid black;
     background-color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
 }
 
-/*-- Strict Button --*/
+.start_button:active {
+    background-color: green;
+    color: white;
+    transition-property: background 20s;
+}
+
+/*-- Start Button ends --*/
+
+/*-- Strict Button starts --*/
 
 .strict_button {
     width: 100px;
@@ -76,6 +91,130 @@
     border-radius: 50px;
     border: 1px solid black;
     background-color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
 }
 
-/*-- On and Off Switch --*/
+.strict_button:focus{
+    background-color: red;
+    color: white;
+}
+
+/*-- Strict Button ends --*/
+
+/*-- Counter starts --*/
+
+.counter {
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    width: 60px;
+    margin-left: 27px
+}
+
+/*-- Counter ends --*/
+
+/*-- On and Off Switch starts --*/
+
+.onoffswitch {
+    position: relative; 
+    width: 78px;
+    margin-left: 166px;
+    margin-top: 72px;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 1px solid #999999; 
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    width: 200%; 
+    margin-left: -100%;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 15px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 11px;
+    background-color: #00A600; color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 11px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    width: 26px;
+    margin: 2px;
+    background: #FFFFFF;
+    border: 2px solid #999999
+    ; border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 44px;
+    transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/*-- On and Off Switch ends --*/
+
+/*--- Media Queries starts ---*/
+
+@media (min-width: 320px) {
+    
+}
+
+@media (min-width: 575px) {
+    
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px){
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@media (min-width: 2560px) {
+    
+}
+
+/*--- Media Queries ends ---*/
