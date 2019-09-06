@@ -1,220 +1,102 @@
-/*--  Panel starts  --*/
-
-.panel {
-    height: 600px;
-    width: 400px;
-    margin: 40px;
-    margin-left: 500px;
-    border-radius: 50px;
-    background-color: #d9d9d9;
-    border: 2px solid black;
-}
-
-/*--  Panel ends  --*/
-
-/*--  Color Button starts --*/
-
-.yellow {
-    height: 100px;
-    width: 100px;
-    margin: 46px;
-    margin-left: 8px;
-    background-color: yellow;
-    border-radius: 75px;
-    border: 2px solid black;
-    
-}
-
-.red {
-    height: 100px;
-    width: 100px;
-    margin: 40px;
-    margin-left: 8px;
-    background-color: red;
-    border-radius: 75px;
-    border: 2px solid black;
-}
-
-.blue {
-    height: 100px;
-    width: 100px;
-    margin: 150px;
-    margin-left: 25px;
-    background-color: blue;
-    border-radius: 75px;
-    border: 2px solid black;
-}
-
-.green {
-    height: 100px;
-    width: 100px;
-    margin: 150px;
-    margin-left: 0px;
-    background-color: green;
-    border-radius: 75px;
-    border: 2px solid black;
-}
-
-/*--  Color Button ends --*/
-
-/*-- Start Button starts --*/
-
-.container {
-    display: inline-block;
-    position: absolute;
-    margin-top: 400px;
-}
-
-.start_button {
-    width: 100px;
-    margin-left: 46px;
-    border-radius: 50px;
-    border: 1px solid black;
-    background-color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-}
-
-.start_button:active {
-    background-color: green;
-    color: white;
-    transition-property: background 20s;
-}
-
-/*-- Start Button ends --*/
-
-/*-- Strict Button starts --*/
-
-.strict_button {
-    width: 100px;
-    margin-left: 98px;
-    border-radius: 50px;
-    border: 1px solid black;
-    background-color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-}
-
-.strict_button:focus{
-    background-color: red;
-    color: white;
-}
-
-/*-- Strict Button ends --*/
-
-/*-- Counter starts --*/
-
-.counter {
+.startButton {
+    height: 30px;
+    width: 50px;
     background-color: black;
     color: white;
     font-size: 10px;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    width: 60px;
-    margin-left: 27px
 }
 
-/*-- Counter ends --*/
-
-/*-- On and Off Switch starts --*/
-
-.onoffswitch {
-    position: relative; 
-    width: 78px;
-    margin-left: 166px;
-    margin-top: 72px;
-}
-
-.onoffswitch-checkbox {
-    display: none;
-}
-
-.onoffswitch-label {
-    display: block; 
-    overflow: hidden; 
-    cursor: pointer;
-    border: 1px solid #999999; 
-    border-radius: 20px;
-}
-
-.onoffswitch-inner {
-    width: 200%; 
-    margin-left: -100%;
-}
-
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    float: left;
-    width: 50%;
+.strictButton {
     height: 30px;
-    padding: 0;
-    line-height: 30px;
-    font-size: 15px;
+    width: 50px;
+    background-color: black;
     color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    box-sizing: border-box;
+    font-size: 10px;
 }
 
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 11px;
-    background-color: #00A600; color: #FFFFFF;
-}
 
-.onoffswitch-inner:after {
-    content: "OFF";
-    padding-right: 11px;
-    background-color: #EEEEEE; color: #999999;
-    text-align: right;
-}
-
-.onoffswitch-switch {
-    width: 26px;
-    margin: 2px;
-    background: #FFFFFF;
-    border: 2px solid #999999
-    ; border-radius: 20px;
+.turn {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 44px;
-    transition: all 0.3s ease-in 0s; 
+    background: grey;
+    color: blue;
+    font-family: courier;
+    font-size: 20px;
+    height: 30px;
+    width: 50px;
+    margin-left: 300px;
+    margin-top: 70px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
 }
 
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
+.count {
+    margin-left: 300px;
+    margin-top: 110px;
 }
 
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+.red {
+    border: 2px solid black;
+    background-color: darkred;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-/*-- On and Off Switch ends --*/
-
-/*--- Media Queries starts ---*/
-
-@media (min-width: 320px) {
-    
+.red:active {
+    border: 2px solid black;
+    background-color: #ffb3b3;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-@media (min-width: 575px) {
-    
+.blue {
+    border: 2px solid black;
+    background-color: darkblue;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-@media (min-width: 768px) {
-    
+.blue:active {
+    border: 2px solid black;
+    background-color: #b3d9ff;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-@media (min-width: 992px){
-    
+.yellow {
+    border: 2px solid black;
+    background-color: #cc9900;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-@media (min-width: 1200px) {
-    
+.yellow:active {
+    border: 2px solid black;
+    background-color: #ffffb3;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-@media (min-width: 2560px) {
-    
+
+.green {
+    border: 2px solid black;
+    background-color: darkgreen;
+    height: 50px;
+    width:50px;
+    margin:20px;
 }
 
-/*--- Media Queries ends ---*/
+
+.green:active {
+    border: 2px solid black;
+    background-color: #b3ffb3;
+    height: 50px;
+    width:50px;
+    margin:20px;
+}
