@@ -12,15 +12,22 @@
 
 <body>
   <section>
-    <div id='colorBoxes' class='red' onclick='red.play();'></div>
-    <div id="colorBoxes" class="blue" onclick='blue.play();'></div>
-    <div id="colorBoxes" class="yellow" onclick='yellow.play();'></div> 
-    <div id="colorBoxes" class="green" onclick='green.play();'></div>
-    <input type="checkbox" id='power' class='onOffButton'>Power</input>
-    <button id="start" class="startButton" onclick='start'>Start</button>
+      <div id="counterBox" class="turn"></div>
+     <row>
+       <div id='colorBoxes' class='red' onclick='red.play();'></div>
+       <div id="colorBoxes" class="blue" onclick='blue.play();'></div>
+      </row>
+    </section>
+    <section>
+      <row>
+        <div id="colorBoxes" class="yellow" onclick='yellow.play();'></div>
+        <div id="colorBoxes" class="green" onclick='green.play();'></div>
+      </row>
+    </section>
+    <section>
+    <button id='power' class='onOffButton' onclick='power'>Power</button>
+    <button id='start' class='startButton' onclick='start'>Start</button>
     <button id="strict" class="strictButton">Strict</button>
-    <div id="counterBox" class="turn"></div>
-    <div class="count">Count</div>
   </section>
 </body>
 
