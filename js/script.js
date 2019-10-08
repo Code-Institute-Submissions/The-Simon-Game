@@ -1,95 +1,97 @@
 // Varibles
 
-let onOffButton = false;
-let start = false;
-let strict = false;
-let level = 1;
-let colorBoxes;
-let color = ['red', 'blue', 'yellow', 'green'];
-let counterBox;
+var onOffButton = false;
+var start = false;
+var strict = false;
+var level = 0;
+var colorBoxes;
+var color = ['red', 'blue', 'yellow', 'green'];
+var counterBox;
+var simonSequence;
+var startGame;
+var $;
 
-let red = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-let blue = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
-let yellow = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
-let green = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+
+var red = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var blue = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var yellow = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var green = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 // Power Button
 
-$('#power').click(function() {
-  onOffButton = (onOffButton == false);
-  if (onOffButton) {
-    onOffButton = true;
-    $('#counterBox').text('--');
-  }
-  else {
-    onOffButton = false;
-    $('#counterBox').text('');
-  }
-  start = false;
-  strict = false;
-  console.log('counterBox');
+$('#power').click(function(event) {
+    onOffButton = (onOffButton === false);
+    if (onOffButton) {
+        onOffButton = true;
+        $('#power').css('background-color', 'green');
+        $('#power').css('color', 'black');
+        $('#counterBox').text('--');
+    } else {
+        onOffButton = false;
+        start = false;
+        $('#power').css('background-color', 'black');
+        $('#power').css('color', 'white');
+        $('#start').css('background-color', 'black');
+        $('#start').css('color', 'white');
+        $('#counterBox').text('');
+    }
+    start = false;
+    strict = false;
+    level = 0;
+    level++;
+    simonSequence();
 });
 
 // Start Game Button
 
-$('#start').click(function() {
-  start = (start == false);
-  if (start) {
-    start = true;
-    $('#start').css('background-color', 'white');
-    $('#start').css('color', 'black');
-    $('#counterBox').text('1');
-  }
-  else {
-    start = false;
-    $('#start').css('background-color', 'black');
-    $('#start').css('color', 'white');
-    $('#counterBox').text('--');
-  }
-  strict = false;
-  level = 1;
-  level++;
-  simonSequence();
-  startGame();
+$('#start').click(function(event) {
+    start = (start === false);
+    if (start) {
+        start = true;
+        $('#start').css('background-color', 'white');
+        $('#start').css('color', 'black');
+        $('#counterBox').text('1');
+    }
+    onOffButton = false;
+    strict = false;
+    level = 0;
+    level++;
+    simonSequence();
 });
 
 // Strict Game Button
 
-$('#strict').click(function() {
-  strict = (strict == false);
-  if (strict) {
-    strict = true;
-    $('#strict').css('background-color', 'red');
-    $('#strict').css('color', 'black');
-  }
-  else {
-    strict = false;
-    $('#strict').css('background-color', 'black');
-    $('#strict').css('color', 'white');
-  }
-  level = 1;
-  level++;
-  simonSequence();
-  startGame();
-  console.log('strict');
+$('#strict').click(function(event) {
+    strict = (strict === false);
+    if (strict) {
+        strict = true;
+        $('#strict').css('background-color', 'red');
+        $('#strict').css('color', 'black');
+    } else {
+        strict = false;
+        $('#strict').css('background-color', 'black');
+        $('#strict').css('color', 'white');
+    }
+    onOffButton = false;
+    start = alse;
+    level = 0;
+    level++;
+    simonSequence();
 });
 
 
-function startGame() {
-  $('#start').click(function() {
-    for (var i = 0; i < 20; i++) { 
-    color.push(Math.floor(Math.random() * 4) + 1);
-    console.log('color');
-    }
-  });
-}
 
 // Simon Sequence
 
 function simonSequence() {
-  level = 1;
-  level++;
-  color;
-  startGame();
-  $('#counterBox').text('1');
+    for (var i = 0; i < 20; i++);
+    level = (i + 1);
+    var colorBoxes = Math.floor(Math.random() * 4) + 1;
+    color[colorBoxes];
+    console.log();
 }
+
+// function playerSequence() {
+
+
+// function error() {
