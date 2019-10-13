@@ -4,7 +4,6 @@ var onOffButton = false;
 var start = false;
 var strict = false;
 var level = 0;
-var colorBoxes;
 var color = ['red', 'blue', 'yellow', 'green'];
 var counterBox;
 var simonSequence;
@@ -19,16 +18,13 @@ var green = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 // Power Button
 
-$('#power').click(function(event) {
+$('#power').click(function() {
     onOffButton = (onOffButton === false);
     if (onOffButton) {
-        onOffButton = true;
         $('#power').css('background-color', 'green');
         $('#power').css('color', 'black');
         $('#counterBox').text('--');
     } else {
-        onOffButton = false;
-        start = false;
         $('#power').css('background-color', 'black');
         $('#power').css('color', 'white');
         $('#start').css('background-color', 'black');
@@ -36,39 +32,30 @@ $('#power').click(function(event) {
         $('#counterBox').text('');
     }
     start = false;
-    strict = false;
-    level = 0;
-    level++;
-    simonSequence();
 });
 
 // Start Game Button
 
-$('#start').click(function(event) {
-    start = (start === false);
-    if (start) {
+$('#start').click(function() {
+    if (onOffButton) {
         start = true;
+        if (start) {
         $('#start').css('background-color', 'white');
         $('#start').css('color', 'black');
-        $('#counterBox').text('1');
+        resetGame()
     }
-    onOffButton = false;
-    strict = false;
-    level = 0;
-    level++;
-    simonSequence();
+    }
 });
 
 // Strict Game Button
 
-$('#strict').click(function(event) {
+$('#strict').click(function() {
     strict = (strict === false);
     if (strict) {
         strict = true;
         $('#strict').css('background-color', 'red');
         $('#strict').css('color', 'black');
     } else {
-        strict = false;
         $('#strict').css('background-color', 'black');
         $('#strict').css('color', 'white');
     }
@@ -91,7 +78,7 @@ function simonSequence() {
     console.log();
 }
 
-// function playerSequence() {
+// function playerSequence
 
 
-// function error() {
+// function error
