@@ -60,13 +60,7 @@ body {
 }
 
 #red:active {
-    display: inline-block;
-    border: 2px solid white;
     background-color: #ffb3b3;
-    height: 160px;
-    width: 160px;
-    margin-top: 100px;
-    margin-left: 450px;
     border-radius: 60px 10px 10px 10px;
 
 }
@@ -82,12 +76,7 @@ body {
 }
 
 #blue:active {
-    display: inline-block;
-    border: 2px solid white;
     background-color: #b3d9ff;
-    height: 160px;
-    width: 160px;
-    margin-top: 100px;
     border-radius: 10px 60px 10px 10px;
 }
 
@@ -102,12 +91,7 @@ body {
 }
 
 #yellow:active {
-    display: inline-block;
-    border: 2px solid white;
     background-color: #ffffb3;
-    height: 160px;
-    width: 160px;
-    margin-left: 450px;
     border-radius: 10px 10px 10px 60px;
 }
 
@@ -123,10 +107,6 @@ body {
 
 
 #green:active {
-    display: inline-block;
-    border: 2px solid white;
     background-color: #b3ffb3;
-    height: 160px;
-    width: 160px;
     border-radius: 10px 10px 60px 10px;
 }

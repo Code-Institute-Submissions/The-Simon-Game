@@ -8,11 +8,18 @@ var simonSequence;
 var startGame;
 var computerTurn = [];
 var playerTurn = [];
+var button = ['redButton', 'blueButton', 'yellowButton', 'greenButton'];
+var color = ['red', 'blue', 'yellow', 'green'];
 var brightColor = ['#ffb3b3', '#b3d9ff', '#ffffb3', '#b3ffb3'];
-var red = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-var blue = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
-var yellow = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
-var green = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+
+var redButton = document.getElementById('red');
+var blueButton = document.getElementById('blue');
+var yellowButton = document.getElementById('yellow');
+var greenButton = document.getElementById('green');
 
 // Power Button to switch the game on and off
 
@@ -43,7 +50,8 @@ $('#start').click(function() {
         if (start) {
         $('#start').css('background-color', 'white');
         $('#start').css('color', 'black');
-        resetGame()
+        resetGame();
+        simonSequence();
     }
     }
 });
@@ -90,9 +98,6 @@ function nextMove() {
     return Math.floor(Math.random() * 4) + 1;
 };
 
-// Add number to a computer sequence
-
-
 // Light up all numbers in the computer sequence
 function getNumber(number){
     switch (number) {
@@ -111,20 +116,38 @@ function getNumber(number){
     }
 }
 
-
 // Pick a random number between 1 and 4
 
 bright(nextMove)
 
 function bright(number){
-    let [sound, button, brightColor] = getNumber(number)
+    let [sound, button, brightColor] = getNumber(number);
     button.style.backgroundColor = brightColor
     sound.play()
 }
 
+// Add number to a computer sequence
+//function computerTurn() {}
+// computerTurn needs to light the next button to the sequence
+
+// needs the check if player has clicked on the correct button
+
+// if player has clicked the correct button computerTurn needs to add on more to the sequence
+
+// if player has clicked the wrong button the computeTurn needs to replay the sequence
+
+// if in strict mode if player clicked the wrong button the game is over.
 
 
 // function playerSequence
+//function playerTurn() {}
+
+// Player needs to click on the correct button that light up
 
 
 // function error
+//function error() {}
+
+// if player clicked the wrong button the computerSequence needs to replay last sequence
+
+// if in strict mode if player clicked on wrong button the game is over and restarts from the beginning
