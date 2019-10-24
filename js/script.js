@@ -11,6 +11,7 @@ var playerTurn = [];
 var button = ['redButton', 'blueButton', 'yellowButton', 'greenButton'];
 var color = ['red', 'blue', 'yellow', 'green'];
 var brightColor = ['#ffb3b3', '#b3d9ff', '#ffffb3', '#b3ffb3'];
+var sound = ['redSound', 'blueSound', 'yellowSound', 'greenSound'];
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
@@ -121,17 +122,25 @@ function getNumber(number){
 bright(nextMove)
 
 function bright(number){
-    let [sound, button, brightColor] = getNumber(number);
-    button.style.backgroundColor = brightColor
-    sound.play()
+    sound, button, brightColor = getNumber(number);
+    button, color = brightColor;
+    //sound.play();
 }
 
 // Add number to a computer sequence
-//function computerTurn() {}
-// computerTurn needs to light the next button to the sequence
+function computerTurn() {
+
+// computerTurn needs to light up the next button to the sequence
+     computerTurn = nextMove;
+     computerTurn = 20;
 
 // needs the check if player has clicked on the correct button
+    if (playerTurn == computerTurn){
+        level++;
+    } else (playerTurn != computerTurn){
 
+    };
+}
 // if player has clicked the correct button computerTurn needs to add on more to the sequence
 
 // if player has clicked the wrong button the computeTurn needs to replay the sequence
