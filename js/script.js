@@ -104,15 +104,19 @@ function getNumber(number){
     switch (number) {
         case 1:
             return (redSound, redButton, color[0]);
+            setInterval(5000);
             break;
         case 2:
             return (blueSound, blueButton, color[1]);
+            setInterval(5000);
             break;
         case 3:
             return (yellowSound, yellowButton, color[2]);
+            setInterval(5000);
             break;
         case 4:
             return (greenSound, greenButton, color[3]);
+            setInterval(5000);
             break;
     }
 }
