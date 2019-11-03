@@ -85,7 +85,7 @@ function computerTurn() {
             play.green();
         }
         i++
-        if(i < computerTurn.lenght){
+        if(i < 20){
             intervalFunction();
         }
     },100);
