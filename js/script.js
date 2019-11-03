@@ -92,7 +92,7 @@ function simonSequence() {
         bright(computerTurn[i])
     }
 };
-
+/*
 // Generate random number between 1 and 4
 
 function nextMove() {
@@ -104,19 +104,19 @@ function getNumber(number){
     switch (number) {
         case 1:
             return (redSound, redButton, color[0]);
-            setInterval(5000);
+            setInterval(500);
             break;
         case 2:
             return (blueSound, blueButton, color[1]);
-            setInterval(5000);
+            setInterval(500);
             break;
         case 3:
             return (yellowSound, yellowButton, color[2]);
-            setInterval(5000);
+            setInterval(500);
             break;
         case 4:
             return (greenSound, greenButton, color[3]);
-            setInterval(5000);
+            setInterval(500);
             break;
     }
 }
@@ -141,10 +141,10 @@ function computerTurn() {
 // needs the check if player has clicked on the correct button
     if (playerTurn == computerTurn){
         level++;
-    } else (playerTurn != computerTurn){
+    } else (playerTurn != computerTurn)
+    }
 
-    };
-}
+
 // if player has clicked the correct button computerTurn needs to add on more to the sequence
 
 // if player has clicked the wrong button the computeTurn needs to replay the sequence
@@ -164,3 +164,4 @@ function computerTurn() {
 // if player clicked the wrong button the computerSequence needs to replay last sequence
 
 // if in strict mode if player clicked on wrong button the game is over and restarts from the beginning
+*/
