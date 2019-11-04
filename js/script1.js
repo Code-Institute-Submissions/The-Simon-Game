@@ -50,6 +50,8 @@ $('#start').click(function() {
         $('#counterBox').text('1');
     }
     simonIsPlaying = false;
+    computerTurn();
+    playerTurn();
     }
 });
 
@@ -71,7 +73,7 @@ $('#strict').click(function() {
 
 // simonSequence for random selection of colors.
 function computerTurn() {
-    computerTurn.push(color[random()-1]);
+
     simonIsPlaying = true;
     var i = 0;
     var intervalFunction = setInterval(function() {
@@ -86,7 +88,7 @@ function computerTurn() {
         }
         i++
         if(i < 20){
-            intervalFunction();
+         intervalFunction();
         }
     },100);
 
@@ -124,80 +126,83 @@ $("#green").click(function(){
 });
 
 //after clicking color buttons
-playerTurn = {
-    "green" : function(){
-        $("greenSound")[0].play();
-            playerTurn.push("green");
+function playerTurn(green) {
+    greenSound.play();
+        playerTurn.push("green");
             $("#green").addClass("active");
-                            setTimeout(function(){
-                                $("#green").removeClass("active");
-                            },380);
-                             if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-                                 play.error();
-                                 setTimeout(function(){
-                                    start();
-                                 },2000);
-                            }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-                                 setTimeout(function(){
-                                    start();
-                                 },1000);
-                            }
-    },
-        "red" : function(){
-                            $("redSound")[0].play();
-                            playerTurn.push("#red");
-                            $("#red").addClass("active");
-                            setTimeout(function(){
-                                $("#red").removeClass("active");
-                            },380);
-                            if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-                                play.error();
-                                setTimeout(function(){
-                                    start();
-                                 },2000);
-                            }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-                                 setTimeout(function(){
-                                    start();
-                                 },1000);
-                            }
-        },
-        "yellow" : function(){
-                            $("yellowSound")[0].play();
-                            playerTurn.push("#yellow");
-                            $("#yellow").addClass("active");
-                            setTimeout(function(){
-                                $("#yellow").removeClass("active");
-                            },380);
-                            if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-                                play.error();
-                                setTimeout(function(){
-                                    start();
-                                 },2000);
-                            }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-                                 setTimeout(function(){
-                                    start();
-                                 },1000);
-                            }
-                            },
-        "blue" : function(){
-                            $("blueSound")[0].play();
-                            playerTurn.push("#blue");
-                            $("#blue").addClass("active");
-                            setTimeout(function(){
-                                $("#blue").removeClass("active");
-                            },380);
-                            if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-                                play.error();
-                                setTimeout(function(){
-                                    start();
-                                 },2000);
-                            }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-                                 setTimeout(function(){
-                                    start();
-                                 },1000);
-                            }
+            setTimeout(function(){
+                $("#green").removeClass("active");
+                },380);
+                if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+                play.error();
+                setTimeout(function(){
+                start();
+                },2000);
+                }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+                setTimeout(function(){
+                start();
+        },1000);
+    }
+};
+
+function playerTurn(red) {
+    redSound.play();
+        playerTurn.push("red");
+        $("#red").addClass("active");
+        setTimeout(function(){
+        $("#red").removeClass("active");
+        },380);
+        if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+        play.error();
+        setTimeout(function(){
+        start();
+        },2000);
+        }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+        setTimeout(function(){
+        start();
+        },1000);
         }
-}
+    }
+});
+
+function playerTurn(yellow) {
+        yellowSound.play();
+            playerTurn.push("yellow");
+                $("#yellow").addClass("active");
+                setTimeout(function(){
+                    $("#yellow").removeClass("active");
+                    },380);
+                    if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+                    play.error();
+                    setTimeout(function(){
+                    start();
+                    },2000);
+                    }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+                            setTimeout(function(){
+                             start();
+                             },1000);
+                    }
+};
+
+function playerTurn(blue) {
+    blueSound.play();
+       playerTurn.push("blue");
+            $("#blue").addClass("active");
+             setTimeout(function(){
+                $("#blue").removeClass("active");
+                },380);
+                if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+                play.error();
+                setTimeout(function(){
+                start();
+                },2000);
+                }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+                setTimeout(function(){
+                start();
+                },1000);
+            }
+   };
+
 
  //When computer plays, it calls functions from here
     play = {
@@ -242,8 +247,8 @@ playerTurn = {
                             score = 0;
                             }*/
 
-    }
-})
+    };
+
 //ready ends
 /*
 
