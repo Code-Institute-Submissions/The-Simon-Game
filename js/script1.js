@@ -6,11 +6,13 @@ var computerTurn = [];
 var playerTurn = [];
 var simonIsPlaying = false;
 var color = ['red', 'blue', 'yellow', 'green'];
-var sound = ['redSound', 'blueSound', 'yellowSound', 'greenSound'];
-var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
-var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
-var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+var sound = [
+redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+];
+var brightColor = ['#ffb3b3', '#b3d9ff', '#ffffb3', '#b3ffb3'];
 
 var redButton = document.getElementById('red');
 var blueButton = document.getElementById('blue');
@@ -73,23 +75,20 @@ $('#strict').click(function() {
 
 // simonSequence for random selection of colors.
 function computerTurn() {
-
+    start = true;
     simonIsPlaying = true;
-    var i = 0;
-    var intervalFunction = setInterval(function() {
-        if (!computerTurn[0] == 'red'){
+    for (var i = 0; i < computerTurn.length; i++)
+    setInterval(function() {
+        if (!computerTurn[i] == 'red'){
             play.red();
-        }else if (!computerTurn[0] == 'blue'){
+        }else if (!computerTurn[i] == 'blue'){
             play.blue();
-        }else if (!computerTurn[0] == 'yellow'){
+        }else if (!computerTurn[i] == 'yellow'){
             play.yellow();
-        }else if (!computerTurn[0] == 'green'){
+        }else if (!computerTurn[i] == 'green'){
             play.green();
         }
-        i++
-        if(i < 20){
-         intervalFunction();
-        }
+        clearInterval();
     },100);
 
     simonIsPlaying = false;
@@ -100,39 +99,41 @@ function random() {
     return Math.floor(Math.random() * 4) + 1;
 }
 
+simonIsPlaying(random);
 //Players turn on click on the color buttons
-$("#red").click(function(){
+$("red").click(function(){
         if(!simonIsPlaying){
-            playerTurn;
+            playerTurn.red();
         }
 });
 
-$("#blue").click(function(){
+$("blue").click(function(){
         if(!simonIsPlaying){
-            playerTurn;
+            playerTurn.blue();
         }
 });
 
-$("#yellow").click(function(){
+$("yellow").click(function(){
         if(!simonIsPlaying){
-            playerTurn;
+            playerTurn.yellow();
         }
 });
 
-$("#green").click(function(){
+$("green").click(function(){
         if(!simonIsPlaying){
-            playerTurn;
+            playerTurn.green();
         }
 });
 
 //after clicking color buttons
 function playerTurn(green) {
+            start = true;
+        if (start) {
     greenSound.play();
-        playerTurn.push("green");
-            $("#green").addClass("active");
+            $(green).addClass('brightColorGreen');
             setTimeout(function(){
-                $("#green").removeClass("active");
-                },380);
+                $(green).removeClass('brightColorGreen');
+                },1000);
                 if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
                 play.error();
                 setTimeout(function(){
@@ -141,56 +142,62 @@ function playerTurn(green) {
                 }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
                 setTimeout(function(){
                 start();
-        },1000);
+            },1000);
+        }
     }
 };
 
+
 function playerTurn(red) {
-    redSound.play();
-        playerTurn.push("red");
-        $("#red").addClass("active");
-        setTimeout(function(){
-        $("#red").removeClass("active");
-        },380);
-        if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-        play.error();
-        setTimeout(function(){
-        start();
-        },2000);
-        }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-        setTimeout(function(){
-        start();
-        },1000);
+            start = true;
+        if (start) {
+redSound.play();
+            $('#red').addClass('brightColorRed');
+             setTimeout(function(){
+                $('#red').removeClass('brightColorRed');
+                },1000);
+                if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+                play.error();
+                setTimeout(function(){
+                start();
+                },2000);
+                }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+                setTimeout(function(){
+                },1000);
+            }
         }
     }
 });
 
 function playerTurn(yellow) {
+            start = true;
+        if (start) {
         yellowSound.play();
-            playerTurn.push("yellow");
-                $("#yellow").addClass("active");
+                $(yellow).addClass('brightColorYellow');
+            setTimeout(function(){
+                $(yellow).removeClass('brightColorYellow');
+            },1000);
+                if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
+                play.error();
                 setTimeout(function(){
-                    $("#yellow").removeClass("active");
-                    },380);
-                    if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
-                    play.error();
-                    setTimeout(function(){
-                    start();
-                    },2000);
-                    }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
-                            setTimeout(function(){
-                             start();
-                             },1000);
-                    }
+                start();
+           },2000);
+           }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
+                setTimeout(function(){
+                start();
+           },1000);
+        }
+    }
 };
 
 function playerTurn(blue) {
-    blueSound.play();
-       playerTurn.push("blue");
-            $("#blue").addClass("active");
+            start = true;
+        if (start) {
+blueSound.play();
+            $(blue).addClass('brightColorBlue');
              setTimeout(function(){
-                $("#blue").removeClass("active");
-                },380);
+                $(blue).removeClass('brightColorBlue');
+                },1000);
                 if(playerTurn[playerTurn.length-1] != computerTurn[playerTurn.length-1]){
                 play.error();
                 setTimeout(function(){
@@ -198,44 +205,66 @@ function playerTurn(blue) {
                 },2000);
                 }else if(playerTurn[playerTurn.length] == computerTurn[playerTurn.length]){
                 setTimeout(function(){
-                start();
+                    start();
                 },1000);
             }
+        }
    };
 
-
  //When computer plays, it calls functions from here
-    play = {
-        "green" : function(){
-                            $("greenSound")[0].play();
-                            $("#green").addClass("active");
+
+
+
+       function simonIsPlaying(green){
+                            start = true;
+                            if (start) {
+                            greenSound.play();
+                            $(green).addClass("brightColorGreen");
                             setTimeout(function(){
-                            $("#green").removeClass("active");
-                            },500);
-                            },
-        "red" : function(){
-                            $("redSound")[0].play();
-                            $("#red").addClass("active");
+                            $(green).removeClass("brightColorGreen");
+                            },1000);
+                            computerTurn();
+                            playerTurn();
+                            };
+       };
+        function simonIsPlaying(red){
+                    start = true;
+        if (start) {
+                           redSound.play();
+                           $('#red').addClass("brightColorRed");
                             setTimeout(function(){
-                            $("#red").removeClass("active");
-                            },500);
-                            },
-        "yellow" : function(){
-                            $("yellowSound")[0].play();
-                            $("#yellow").addClass("active");
+                            $('#red').removeClass("brightColorRed");
+                            },1000);
+                            }
+                            computerTurn();
+                            playerTurn();
+                            };
+
+        function simonIsPlaying(yellow){
+                    start = true;
+        if (start) {
+                            yellowSound.play();
+                            $(yellow).addClass("brightColorYellow");
                             setTimeout(function(){
-                            $("#yellow").removeClass("active");
-                            },500);
-                            },
-        "blue" : function(){
-                            $("blueSound")[0].play();
-                            $("#blue").addClass("active");
+                            $(yellow).removeClass("brightColorYellow");
+                            },1000);
+                            computerTurn();
+                            playerTurn();
+                            };
+        };
+        function simonIsPlaying(blue){
+                    start = true;
+        if (start) {
+                            blueSound.play();
+                            $(blue).addClass("brightColorBlue");
                             setTimeout(function(){
-                            $("#blue").removeClass("active");
-                            },500);
-                            computerTurn = [];
-                            playerTurn = [];
-                            },
+                            $(blue).removeClass("brightColorBlue");
+                            },1000);
+                            computerTurn();
+                            playerTurn();
+                            };
+        };
+
                             /*
         "error" : function(){
                             $("body").addClass("onErrorClass");
@@ -247,7 +276,7 @@ function playerTurn(blue) {
                             score = 0;
                             }*/
 
-    };
+
 
 //ready ends
 /*
@@ -258,4 +287,4 @@ function resetGame() {
     level = 1;
 
     //simonSequence();
-})*/
+*/
