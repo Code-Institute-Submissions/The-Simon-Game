@@ -62,7 +62,7 @@ body {
 
 }
 
-.brightColorRed {
+#red.active {
     background-color: #ffb3b3;
     border-radius: 60px 10px 10px 10px;
 
@@ -78,7 +78,7 @@ body {
     border-radius: 10px 60px 10px 10px;
 }
 
-.brightColorBlue {
+#blue.active {
     background-color: #b3d9ff;
     border-radius: 10px 60px 10px 10px;
 }
@@ -93,7 +93,7 @@ body {
     border-radius: 10px 10px 10px 60px;
 }
 
-.brightColorYellow {
+#yellow.active {
     background-color: #ffffb3;
     border-radius: 10px 10px 10px 60px;
 }
@@ -109,7 +109,7 @@ body {
 }
 
 
-.brightColorGreen {
+#green.active {
     background-color: #b3ffb3;
     border-radius: 10px 10px 60px 10px;
 }
