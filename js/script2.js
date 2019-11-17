@@ -43,6 +43,7 @@ $('#start').click(function() {
             $('#counterBox').text('1');
             resetGame();
             computerTurn = [];
+            random();
         }
     }
 });
@@ -75,7 +76,7 @@ function resetGame() {
 function random() {
 //1. to generate a random color sequence every time the game starts
     var color = ['red', 'blue', 'yellow', 'green'];
-    return random.push(color[Math.floor(Math.random() * 4) + 1]);
+    return color.push(color[Math.floor(Math.random() * 4) + 1]);
 };
 
 // Computer turn
@@ -85,13 +86,14 @@ start = true;
     var i = 0;
     var interval = setInterval(function(){
         //2. highlight the selected color.
-        $('#' + random[i]).addClass('active');
+        $('#' + color[i]).addClass('active');
         //3. play the sound of that color.
-        $(sound + random[i])[i].play();
+        $(sound + color[i])[0].play();
         i++;
-        if (i < random.length); {
+        if (i < computerTurn.length); {
             clearInterval(interval);
-        }
+        };
+        $('#' + color[i]).removeClass('active');
     },750);
 };        
 
