@@ -204,7 +204,7 @@ function computerTurn() {
             setTimeout(function(){
             },100);
         }
-    }random();
+    }
 };
 
 
