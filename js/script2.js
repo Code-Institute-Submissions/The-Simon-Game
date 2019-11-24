@@ -16,6 +16,7 @@ var yellowButton = document.getElementById('yellow');
 var greenButton = document.getElementById('green');
 var buttons = [redButton, blueButton, yellowButton, greenButton];
 var colors = ['red', 'blue', 'yellow', 'green'];
+
 // Power Button to switch the game on and off. Function 1.
 $('#power').click(function() {
     onOffButton = (onOffButton === false);
@@ -125,16 +126,22 @@ function playerTurn() {
             let actualNumber = number + 1
             userSequence.push(actualNumber)
             playWith(actualNumber)
+            check();
         })
     })
 };
 
 // Check function
-function check() {
 //1. to check if the right color was clicked
 //2. if right color was click move to next sequence
 //3. if wrong color was clicked start sequence over
 //4. if in strict mode when wrong color is clicked the game ends
+function check() {
+    if (userSequence.length == computerSequence.length){
+        console.log('correct button is pressed');
+    }else (userSequence.length != computerSequence.length);{
+      console.log('wrong button is pressed');
+    };
 };
 
 // game ends
