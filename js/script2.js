@@ -75,6 +75,7 @@ function resetGame() {
 function generateRandom() {
     return Math.floor(Math.random() * 4) + 1;
 };
+
 function playWith(number){
     console.log(`Playing with number ${number}`)
     let [sound, button, color] = getNumberAttributes(number)
@@ -137,12 +138,22 @@ function playerTurn() {
 //3. if wrong color was clicked start sequence over
 //4. if in strict mode when wrong color is clicked the game ends
 function check() {
-    if (userSequence.length == computerSequence.length){
-        console.log('correct button is pressed');
-    }else (userSequence.length != computerSequence.length);{
+    if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
+        console.log('correct button was pressed');
+    }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
       console.log('wrong button is pressed');
     };
+}
+
+//Next function
+//1. to move the game process one step futher.
+//2. adding one more button press to the array.
+function nextTurn() {
+for (var i = 0; i < level.length; i++) {
+    
+}
 };
+
 
 // game ends
 function gameEnds() {
