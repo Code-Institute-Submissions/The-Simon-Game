@@ -92,16 +92,16 @@ function playWith(number){
 function computerTurn() {
     computerSequence.forEach(function (number, index) {
         playWith(number, index);
+        nextTurn();
     })
-    nextTurn();
 };
 
 
 function startGame(){
     console.log("Game starts")
     computerSequence.push(generateRandom())
-    computerTurn()
-    playerTurn()
+    computerTurn();
+    playerTurn();
 };
 
 function getNumberAttributes(number){
@@ -129,7 +129,7 @@ function playerTurn() {
             let number = colors.indexOf(id)
             let actualNumber = number + 1
             userSequence.push(actualNumber)
-            playWith(actualNumber)
+            playWith(actualNumber);
             check();
         })
     })
@@ -142,21 +142,24 @@ function playerTurn() {
 //4. if in strict mode when wrong color is clicked the game ends
 function check() {
     if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
-        nextTurn();
         console.log('correct button was pressed');
+         nextTurn();
+         generateRandom();
     }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
         console.log('wrong button is pressed');
     };
-     
+    
 }
 
 //Next function
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
 function nextTurn() {
-for (var i = 0; i < computerSequence; i++) {
+for (var i = 0; i < computerTurn.length; i++) {
     computerSequence[i];
+    userSequence[i];
     level++;
+    generateRandom();
     }
     console.log(computerSequence.length);
     console.log(userSequence.length);
