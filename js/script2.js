@@ -84,15 +84,18 @@ function playWith(number){
         sound.play()
         button.classList.remove('active')
     }, 700)
+
 }
 
 // Computer turn
 // Loop through computersequence and for each number, play sound and light
 function computerTurn() {
     computerSequence.forEach(function (number, index) {
-        playWith(number, index)
+        playWith(number, index);
     })
+    nextTurn();
 };
+
 
 function startGame(){
     console.log("Game starts")
@@ -139,21 +142,25 @@ function playerTurn() {
 //4. if in strict mode when wrong color is clicked the game ends
 function check() {
     if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
+        nextTurn();
         console.log('correct button was pressed');
     }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
-      console.log('wrong button is pressed');
+        console.log('wrong button is pressed');
     };
+     
 }
 
 //Next function
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
 function nextTurn() {
-for (var i = 0; i < level.length; i++) {
-    
+for (var i = 0; i < computerSequence; i++) {
+    computerSequence[i];
+    level++;
+    }
+    console.log(computerSequence.length);
+    console.log(userSequence.length);
 }
-};
-
 
 // game ends
 function gameEnds() {
