@@ -92,7 +92,6 @@ function playWith(number){
 function computerTurn() {
     computerSequence.forEach(function (number, index) {
         playWith(number, index);
-        nextTurn();
     })
 };
 
@@ -143,8 +142,6 @@ function playerTurn() {
 function check() {
     if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
         console.log('correct button was pressed');
-         nextTurn();
-         generateRandom();
     }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
         console.log('wrong button is pressed');
     };
@@ -154,16 +151,15 @@ function check() {
 //Next function
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
-function nextTurn() {
-for (var i = 0; i < computerTurn.length; i++) {
-    computerSequence[i];
-    userSequence[i];
-    level++;
-    generateRandom();
-    }
-    console.log(computerSequence.length);
-    console.log(userSequence.length);
-}
+for (var i = 0; i < 20; i++) {
+        setTimeout(function(){
+            console.log(i);
+            level++;
+            startGame();
+            return;
+    },1000);
+};
+
 
 // game ends
 function gameEnds() {
