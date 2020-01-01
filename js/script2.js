@@ -142,6 +142,7 @@ function playerTurn() {
 function check() {
     if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
         console.log('correct button was pressed');
+        next();
     }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
         console.log('wrong button is pressed');
     };
@@ -151,15 +152,15 @@ function check() {
 //Next function
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
-for (var i = 0; i < 20; i++) {
+function next(){
+    for (var i = 0; i < 20; i++) {
         setTimeout(function(){
-            console.log(i);
             level++;
             startGame();
             return;
-    },1000);
-};
-
+        },1000);
+    };
+}
 
 // game ends
 function gameEnds() {
