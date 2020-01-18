@@ -47,6 +47,7 @@ $('#start').click(function() {
             $('#counterBox').text('1');
             resetGame();
             startGame();
+            playerTurn();
         }
     }
 });
@@ -65,6 +66,14 @@ $('#strict').click(function() {
        $('#strict').css('color', 'white');
     }
 });
+
+// Start game function
+function startGame(){
+    console.log("Game starts")
+    computerSequence.push(generateRandom())
+    computerTurn();
+};
+
 // Reset game
 function resetGame() {
     computerSequence = [];
@@ -75,6 +84,15 @@ function resetGame() {
 function generateRandom() {
     return Math.floor(Math.random() * 4) + 1;
 };
+
+// Computer turn
+// Loop through computersequence and for each number, play sound and light
+function computerTurn() {
+    computerSequence.forEach(function (number, index) {
+        playWith(number, index);
+    })
+};
+
 
 function playWith(number){
     console.log(`Playing with number ${number}`)
@@ -87,21 +105,6 @@ function playWith(number){
 
 }
 
-// Computer turn
-// Loop through computersequence and for each number, play sound and light
-function computerTurn() {
-    computerSequence.forEach(function (number, index) {
-        playWith(number, index);
-    })
-};
-
-
-function startGame(){
-    console.log("Game starts")
-    computerSequence.push(generateRandom())
-    computerTurn();
-    playerTurn();
-};
 
 function getNumberAttributes(number){
     switch (number) {
@@ -142,9 +145,11 @@ function playerTurn() {
 function check() {
     if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
         console.log('correct button was pressed');
+        computerTurn();
         next();
     }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
         console.log('wrong button is pressed');
+        playerTurn();
     };
     
 }
@@ -153,13 +158,13 @@ function check() {
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
 function next(){
+     computerSequence.push(generateRandom())
     for (var i = 0; i < 20; i++) {
-        setTimeout(function(){
-            level++;
-            startGame();
-            return;
-        },1000);
+        level++;
+        computerTurn();      
+        return;
     };
+    
 }
 
 // game ends
