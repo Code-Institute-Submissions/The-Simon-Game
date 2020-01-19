@@ -36,6 +36,7 @@ $('#power').click(function() {
     start = false;
     strict = false;
 });
+
 // Start Game Button to start the game or start a new game. Function 2.
 $('#start').click(function() {
     start = (start === false);
@@ -51,6 +52,7 @@ $('#start').click(function() {
         }
     }
 });
+
 // Strict Game Button to play a strict game. Function 3.
 $('#strict').click(function() {
     strict = (strict === false);
@@ -86,7 +88,7 @@ function generateRandom() {
 };
 
 // Computer turn
-// Loop through computersequence and for each number, play sound and light
+// 1. Loop through computersequence and for each number, play sound and light
 function computerTurn() {
     computerSequence.forEach(function (number, index) {
         playWith(number, index);
@@ -98,11 +100,8 @@ function playWith(number){
     console.log(`Playing with number ${number}`)
     let [sound, button, color] = getNumberAttributes(number)
     button.classList.add('active')
-    setTimeout(function(){
-        sound.play()
-        button.classList.remove('active')
-    }, 700)
-
+    sound.play()
+    //button.classList.remove('active')
 }
 
 
@@ -142,17 +141,32 @@ function playerTurn() {
 //2. if right color was click move to next sequence
 //3. if wrong color was clicked start sequence over
 //4. if in strict mode when wrong color is clicked the game ends
-function check() {
-    if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
-        console.log('correct button was pressed');
-        computerTurn();
-        next();
-    }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
-        console.log('wrong button is pressed');
-        playerTurn();
-    };
-    
+function checkPromise() {
+    return new promise((resolve, reject) => {
+        if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
+            resolve ({
+                message: 'Great',
+                next();
+            });
+        }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
+            reject ({
+                error: 'Sucks',
+                computerSequence = [],
+            })
+            
+        };
+    });
 }
+
+checkPromise().then((message) => {
+    console.log('correct button was pressed' + message);
+}).catch((error) =>{
+    console.log('wrong button is pressed' + error);
+});
+
+
+
+
 
 //Next function
 //1. to move the game process one step futher.
@@ -160,8 +174,7 @@ function check() {
 function next(){
      computerSequence.push(generateRandom())
     for (var i = 0; i < 20; i++) {
-        level++;
-        computerTurn();      
+        level++;     
         return;
     };
     
