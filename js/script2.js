@@ -100,8 +100,10 @@ function playWith(number){
     console.log(`Playing with number ${number}`)
     let [sound, button, color] = getNumberAttributes(number)
     button.classList.add('active')
-    sound.play()
-    //button.classList.remove('active')
+    setTimeout (function() {
+        sound.play()
+        button.classList.remove('active')
+    },700);
 }
 
 
@@ -141,30 +143,27 @@ function playerTurn() {
 //2. if right color was click move to next sequence
 //3. if wrong color was clicked start sequence over
 //4. if in strict mode when wrong color is clicked the game ends
-function checkPromise() {
-    return new promise((resolve, reject) => {
+function check() {
+    var promise = new Promise((resolve, reject) => {
         if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
-            resolve ({
-                message: 'Great',
+            resolve ('Great ');
+            setTimeout (function() {
                 next();
-            });
+            },700); 
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
-            reject ({
-                error: 'Sucks',
-                computerSequence = [],
-            })
-            
-        };
+            reject ('Sucks '); 
+            setTimeout (function() {
+                computerTurn();
+            },700);    
+        };     
     });
+    promise.then((message) => {
+    console.log(message + 'correct button was pressed');
+    }).catch((error) =>{
+    console.log(error + 'wrong button is pressed');
+    });
+   
 }
-
-checkPromise().then((message) => {
-    console.log('correct button was pressed' + message);
-}).catch((error) =>{
-    console.log('wrong button is pressed' + error);
-});
-
-
 
 
 
@@ -174,7 +173,8 @@ checkPromise().then((message) => {
 function next(){
      computerSequence.push(generateRandom())
     for (var i = 0; i < 20; i++) {
-        level++;     
+        level++;
+        computerTurn();     
         return;
     };
     
