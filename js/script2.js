@@ -78,7 +78,8 @@ function startGame(){
 
 // Reset game
 function resetGame() {
-    computerSequence = [];
+    computerSequence.clear();
+    userSequence.clear();
     level = 1;
 };
 
@@ -149,20 +150,32 @@ function check() {
             resolve ('Great ');
             setTimeout (function() {
                 next();
+                setTimeout (function(){
+                $('#counterBox').text('Yeah');
+                },500);
             },700); 
+            $('#counterBox').text('1');
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
             reject ('Sucks '); 
             setTimeout (function() {
                 computerTurn();
-            },700);    
-        };     
+                $('#counterBox').text('Oops');
+            },700);
+             $('#counterBox').text('1');      
+        /*}else (userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]);{
+            strict = true;
+            reject ('Sucks '); 
+            setTimeout (function() {
+                computerTurn();
+            },700); 
+            resetGame();*/    
+        };
     });
     promise.then((message) => {
     console.log(message + 'correct button was pressed');
     }).catch((error) =>{
     console.log(error + 'wrong button is pressed');
     });
-   
 }
 
 
