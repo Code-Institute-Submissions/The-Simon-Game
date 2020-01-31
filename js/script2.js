@@ -78,8 +78,8 @@ function startGame(){
 
 // Reset game
 function resetGame() {
-    computerSequence.clear();
-    userSequence.clear();
+    computerSequence = [];
+    userSequence = [];
     level = 1;
 };
 
@@ -91,9 +91,11 @@ function generateRandom() {
 // Computer turn
 // 1. Loop through computersequence and for each number, play sound and light
 function computerTurn() {
-    computerSequence.forEach(function (number, index) {
-        playWith(number, index);
-    })
+    setTimeout (function(){
+        computerSequence.forEach(function (number, index) {
+            playWith(number, index);
+        })
+    },900);
 };
 
 
@@ -150,9 +152,7 @@ function check() {
             resolve ('Great ');
             setTimeout (function() {
                 next();
-                setTimeout (function(){
                 $('#counterBox').text('Yeah');
-                },500);
             },700); 
             $('#counterBox').text('1');
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
