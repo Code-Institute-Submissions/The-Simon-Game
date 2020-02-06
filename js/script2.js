@@ -39,6 +39,10 @@ $('#power').click(function() {
 
 // Start Game Button to start the game or start a new game. Function 2.
 $('#start').click(function() {
+    // redButton = document.getElementById('red');
+    // blueButton = document.getElementById('blue');
+    // yellowButton = document.getElementById('yellow');
+    // greenButton = document.getElementById('green');
     start = (start === false);
     if (onOffButton) {
         start = true;
@@ -91,36 +95,44 @@ function generateRandom() {
 // Computer turn
 // 1. Loop through computersequence and for each number, play sound and light
 function computerTurn() {
-    setTimeout (function(){
-        computerSequence.forEach(function (number, index) {
-            playWith(number, index);
-        })
+    var counter = 0;
+    var interval = setInterval (function(){
+        playWith(computerSequence[counter]);
+            counter++;
+            if (counter >= computerSequence.length) {
+                clearInterval(interval);
+            };
+        //computerSequence.forEach(function (number, index) {
+        //})
     },900);
+    
 };
 
 
 function playWith(number){
     console.log(`Playing with number ${number}`)
-    let [sound, button, color] = getNumberAttributes(number)
-    button.classList.add('active')
+    // let sound, button, color = getNumberAttributes(computerSequence[number])
+    buttons[number-1].classList.add('active')
     setTimeout (function() {
-        sound.play()
-        button.classList.remove('active')
+        sounds[number-1].play()
+        buttons[number-1].classList.remove('active')
     },700);
 }
 
 
 function getNumberAttributes(number){
+    var vali = [];
     switch (number) {
         case 1:
-            return [sounds[0], buttons[0], colors[0]];
+            vali = [sounds[0], buttons[0], colors[0]];
         case 2:
-            return [sounds[1], buttons[1], colors[1]];
+            vali =  [sounds[1], buttons[1], colors[1]];
         case 3:
-            return [sounds[2], buttons[2], colors[2]];
+            vali =  [sounds[2], buttons[2], colors[2]];
         case 4:
-            return [sounds[3], buttons[3], colors[3]];
+            vali =  [sounds[3], buttons[3], colors[3]];
     }
+    return vali;
 };
 
 // Player turn
