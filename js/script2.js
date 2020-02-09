@@ -1,7 +1,7 @@
 //Varibles
-var onOffButton = false; //Function 1.
-var start = false; //Function 2.
-var strict = false; //Function 3.
+var onOffButton = false; 
+var start = false; 
+var strict = false; 
 var computerSequence = [];
 var userSequence = []
 var level = 0;
@@ -17,7 +17,7 @@ var greenButton = document.getElementById('green');
 var buttons = [redButton, blueButton, yellowButton, greenButton];
 var colors = ['red', 'blue', 'yellow', 'green'];
 
-// Power Button to switch the game on and off. Function 1.
+// Power Button to switch the game on and off. 
 $('#power').click(function() {
     onOffButton = (onOffButton === false);
     if (onOffButton) {
@@ -37,7 +37,7 @@ $('#power').click(function() {
     strict = false;
 });
 
-// Start Game Button to start the game or start a new game. Function 2.
+// Start Game Button to start the game or start a new game. 
 $('#start').click(function() {
     // redButton = document.getElementById('red');
     // blueButton = document.getElementById('blue');
@@ -57,7 +57,7 @@ $('#start').click(function() {
     }
 });
 
-// Strict Game Button to play a strict game. Function 3.
+// Strict Game Button to play a strict game.
 $('#strict').click(function() {
     strict = (strict === false);
     if (onOffButton) {
@@ -98,12 +98,10 @@ function computerTurn() {
     var counter = 0;
     var interval = setInterval (function(){
         playWith(computerSequence[counter]);
-            counter++;
-            if (counter >= computerSequence.length) {
-                clearInterval(interval);
-            };
-        //computerSequence.forEach(function (number, index) {
-        //})
+        counter++;
+        if (counter >= computerSequence.length) {
+            clearInterval(interval);
+        };
     },900);
     
 };
@@ -111,7 +109,6 @@ function computerTurn() {
 
 function playWith(number){
     console.log(`Playing with number ${number}`)
-    // let sound, button, color = getNumberAttributes(computerSequence[number])
     buttons[number-1].classList.add('active')
     setTimeout (function() {
         sounds[number-1].play()
@@ -164,16 +161,17 @@ function check() {
             resolve ('Great ');
             setTimeout (function() {
                 next();
-                $('#counterBox').text('Yeah');
+               // $('#counterBox').text('Yeah');
             },700); 
-            $('#counterBox').text('1');
+            level++;
+            $('#counterBox').text(level);
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
             reject ('Sucks '); 
             setTimeout (function() {
                 computerTurn();
-                $('#counterBox').text('Oops');
+               // $('#counterBox').text('Oops');
             },700);
-             $('#counterBox').text('1');      
+             $('#counterBox').text(level);      
         /*}else (userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]);{
             strict = true;
             reject ('Sucks '); 
@@ -198,7 +196,6 @@ function check() {
 function next(){
      computerSequence.push(generateRandom())
     for (var i = 0; i < 20; i++) {
-        level++;
         computerTurn();     
         return;
     };
