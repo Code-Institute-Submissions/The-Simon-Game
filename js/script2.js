@@ -160,33 +160,28 @@ function check() {
         if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
             resolve ('Great ');
             setTimeout (function() {
-                next();
-               // $('#counterBox').text('Yeah');
-            },700); 
+                $('#counterBox').text(level);
+                clearTimeout();
+            },750);
+            next(); 
             level++;
-            $('#counterBox').text(level);
+            $('#counterBox').text('Yeah!');
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
-            reject ('Sucks '); 
+            reject ('Sucks ');
             setTimeout (function() {
+                $('#counterBox').text(level);
+                clearTimeout();
+                },750);
                 computerTurn();
-               // $('#counterBox').text('Oops');
-            },700);
-             $('#counterBox').text(level);      
-        /*}else (userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]);{
-            strict = true;
-            reject ('Sucks '); 
-            setTimeout (function() {
-                computerTurn();
-            },700); 
-            resetGame();*/    
-        };
-    });
+                $('#counterBox').text('Oops!');         
+            };
+        });
     promise.then((message) => {
     console.log(message + 'correct button was pressed');
     }).catch((error) =>{
     console.log(error + 'wrong button is pressed');
     });
-}
+};
 
 
 
@@ -205,4 +200,4 @@ function next(){
 // game ends
 function gameEnds() {
 //1. when the sequence s completed the game ends
-};
+}
