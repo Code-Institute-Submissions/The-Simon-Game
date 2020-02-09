@@ -39,10 +39,6 @@ $('#power').click(function() {
 
 // Start Game Button to start the game or start a new game. 
 $('#start').click(function() {
-    // redButton = document.getElementById('red');
-    // blueButton = document.getElementById('blue');
-    // yellowButton = document.getElementById('yellow');
-    // greenButton = document.getElementById('green');
     start = (start === false);
     if (onOffButton) {
         start = true;
@@ -163,11 +159,19 @@ function check() {
                 $('#counterBox').text(level);
                 clearTimeout();
             },750);
+            if (level == 20) {
+                alert ('You Win!!');
+                startGame();
+            };
             next(); 
             level++;
             $('#counterBox').text('Yeah!');
         }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
             reject ('Sucks ');
+            if (strict = (strict === true)){
+                alert('Game Over!');
+                startGame();
+            };
             setTimeout (function() {
                 $('#counterBox').text(level);
                 clearTimeout();
@@ -198,6 +202,7 @@ function next(){
 }
 
 // game ends
-function gameEnds() {
 //1. when the sequence s completed the game ends
-}
+function gameEnds() {
+   
+};
