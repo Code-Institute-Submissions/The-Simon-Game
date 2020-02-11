@@ -3,7 +3,7 @@ var onOffButton = false;
 var start = false; 
 var strict = false; 
 var computerSequence = [];
-var userSequence = []
+var userSequence = [];
 var level = 0;
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
 var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3')
@@ -56,14 +56,13 @@ $('#start').click(function() {
 // Strict Game Button to play a strict game.
 $('#strict').click(function() {
     strict = (strict === false);
-    if (onOffButton) {
+    if (onOffButton && strict) {
        strict = true;
        if (strict) {
         $('#strict').css('background-color', 'red');
         $('#strict').css('color', 'black');
        }
     } else {
-       strict = false;
        $('#strict').css('background-color', 'black');
        $('#strict').css('color', 'white');
     }
@@ -159,9 +158,9 @@ function check() {
                 $('#counterBox').text(level);
                 clearTimeout();
             },750);
-            if (level == 20) {
+            if (level == 5) {
                 alert ('You Win!!');
-                startGame();
+                resetGame();
             };
             next(); 
             level++;
@@ -170,7 +169,7 @@ function check() {
             reject ('Sucks ');
             if (strict = (strict === true)){
                 alert('Game Over!');
-                startGame();
+                resetGame();
             };
             setTimeout (function() {
                 $('#counterBox').text(level);

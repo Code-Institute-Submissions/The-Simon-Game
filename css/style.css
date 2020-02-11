@@ -6,11 +6,12 @@ body {
 }
 
 .buttons {
- margin-left: 40%;
+ margin-left: 500px;
  margin-top: 20px;
 }
 
 .startButton {
+    margin: 15px;
     height: 30px;
     width: 50px;
     background-color: black;
@@ -19,6 +20,7 @@ body {
 }
 
 .strictButton {
+    margin: 15px;
     height: 30px;
     width: 50px;
     background-color: black;
@@ -27,6 +29,7 @@ body {
 }
 
 .onOffButton {
+    margin: 15px;
     height: 30px;
     width: 50px;
     background-color: black;
