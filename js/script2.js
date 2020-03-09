@@ -39,13 +39,12 @@ $('#power').click(function() {
 
 // Start Game Button to start the game or start a new game. 
 $('#start').click(function() {
-    start = (start === false);
     if (onOffButton) {
         start = true;
         if (start) {
             $('#start').css('background-color', 'white');
             $('#start').css('color', 'black');
-            $('#counterBox').text('1');
+            $('#counterBox').text(level);
             resetGame();
             startGame();
             playerTurn();
@@ -56,7 +55,7 @@ $('#start').click(function() {
 // Strict Game Button to play a strict game.
 $('#strict').click(function() {
     strict = (strict === false);
-    if (onOffButton && strict) {
+    if (onOffButton && start) {
        strict = true;
        if (strict) {
         $('#strict').css('background-color', 'red');
@@ -97,8 +96,10 @@ function computerTurn() {
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         };
-    },900);
-    
+    },3000);
+
+    console.log(`computerSequence ${computerSequence}`)
+    console.log(typeof computerSequence)
 };
 
 
@@ -108,7 +109,7 @@ function playWith(number){
     setTimeout (function() {
         sounds[number-1].play()
         buttons[number-1].classList.remove('active')
-    },700);
+    },750);
 }
 
 
@@ -141,9 +142,20 @@ function playerTurn() {
             userSequence.push(actualNumber)
             playWith(actualNumber);
             check();
+            console.log(`userSequence ${userSequence}`)
+            nextStep();
         })
-    })
+    }) 
 };
+
+function nextStep() {
+    if (userSequence.length == computerSequence.length){
+        console.log('next')
+        userSequence = [];
+        next(); 
+        level++;
+    }
+}
 
 // Check function
 //1. to check if the right color was clicked
@@ -152,7 +164,8 @@ function playerTurn() {
 //4. if in strict mode when wrong color is clicked the game ends
 function check() {
     var promise = new Promise((resolve, reject) => {
-        if (userSequence[userSequence.length-1] == computerSequence[computerSequence.length-1]){
+        var userStage = userSequence.length-1
+        if (userSequence[userStage] == computerSequence[userStage]){
             resolve ('Great ');
             setTimeout (function() {
                 $('#counterBox').text(level);
@@ -162,23 +175,21 @@ function check() {
                 alert ('You Win!!');
                 resetGame();
             };
-            next(); 
-            level++;
             $('#counterBox').text('Yeah!');
-        }else if(userSequence[userSequence.length-1] != computerSequence[computerSequence.length-1]){
+        }else {
             reject ('Sucks ');
-            if (strict = (strict === true)){
+            $('#counterBox').text('Oops!');
+            if (strict === true){
                 alert('Game Over!');
                 resetGame();
             };
             setTimeout (function() {
                 $('#counterBox').text(level);
                 clearTimeout();
-                },750);
-                computerTurn();
-                $('#counterBox').text('Oops!');         
-            };
-        });
+            },750);
+            computerTurn();       
+        };
+    });
     promise.then((message) => {
     console.log(message + 'correct button was pressed');
     }).catch((error) =>{
@@ -192,12 +203,9 @@ function check() {
 //1. to move the game process one step futher.
 //2. adding one more button press to the array.
 function next(){
-     computerSequence.push(generateRandom())
-    for (var i = 0; i < 20; i++) {
-        computerTurn();     
-        return;
-    };
     
+    computerSequence.push(generateRandom())
+    computerTurn();        
 }
 
 // game ends
