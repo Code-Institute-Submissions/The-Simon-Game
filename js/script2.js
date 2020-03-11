@@ -6,9 +6,9 @@ var computerSequence = [];
 var userSequence = [];
 var level = 0;
 var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3')
-var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3')
-var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var sounds = [redSound, blueSound, yellowSound, greenSound];
 var redButton = document.getElementById('red');
 var blueButton = document.getElementById('blue');
@@ -17,7 +17,8 @@ var greenButton = document.getElementById('green');
 var buttons = [redButton, blueButton, yellowButton, greenButton];
 var colors = ['red', 'blue', 'yellow', 'green'];
 
-// Power Button to switch the game on and off. 
+// Power Button.
+// Clicking on the power button will enable you to click on the start and strict buttons.
 $('#power').click(function() {
     onOffButton = (onOffButton === false);
     if (onOffButton) {
@@ -32,27 +33,35 @@ $('#power').click(function() {
         $('#strict').css('background-color', 'black');
         $('#strict').css('color', 'white');
         $('#counterBox').text('');
-    }
+    };
     start = false;
     strict = false;
 });
 
-// Start Game Button to start the game or start a new game. 
+// Start Game Button.
+// To start the game or resets the game to start a new game. 
 $('#start').click(function() {
     if (onOffButton) {
         start = true;
         if (start) {
             $('#start').css('background-color', 'white');
             $('#start').css('color', 'black');
-            $('#counterBox').text(level);
-            resetGame();
-            startGame();
-            playerTurn();
-        }
-    }
+            $('#counterBox').text('1');
+            reset();
+        };
+    };
 });
 
-// Strict Game Button to play a strict game.
+// Reset.
+// Reset function that is placed in the start function to reset the game.
+function reset() {
+    resetGame();
+    startGame();
+    playerTurn();
+};
+
+// Strict Game Button
+// To play a strict game.
 $('#strict').click(function() {
     strict = (strict === false);
     if (onOffButton && start) {
@@ -64,17 +73,19 @@ $('#strict').click(function() {
     } else {
        $('#strict').css('background-color', 'black');
        $('#strict').css('color', 'white');
-    }
+    };
 });
 
-// Start game function
+// Start game.
+// Start to run the computerSequence at a random sequence.
 function startGame(){
     console.log("Game starts")
     computerSequence.push(generateRandom())
     computerTurn();
 };
 
-// Reset game
+// Reset game.
+// resetGame will clear both Sequences and start the level at level 1.
 function resetGame() {
     computerSequence = [];
     userSequence = [];
@@ -86,8 +97,8 @@ function generateRandom() {
     return Math.floor(Math.random() * 4) + 1;
 };
 
-// Computer turn
-// 1. Loop through computersequence and for each number, play sound and light
+// Computer turn.
+// Loop through computersequence and for each number, play sound and light
 function computerTurn() {
     var counter = 0;
     var interval = setInterval (function(){
@@ -96,22 +107,18 @@ function computerTurn() {
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         };
-    },3000);
-
+    },1500);
     console.log(`computerSequence ${computerSequence}`)
-    console.log(typeof computerSequence)
 };
 
-
 function playWith(number){
-    console.log(`Playing with number ${number}`)
+    //console.log(`Playing with number ${number}`)
     buttons[number-1].classList.add('active')
     setTimeout (function() {
         sounds[number-1].play()
         buttons[number-1].classList.remove('active')
     },750);
-}
-
+};
 
 function getNumberAttributes(number){
     var vali = [];
@@ -124,14 +131,15 @@ function getNumberAttributes(number){
             vali =  [sounds[2], buttons[2], colors[2]];
         case 4:
             vali =  [sounds[3], buttons[3], colors[3]];
-    }
+    };
     return vali;
 };
 
-// Player turn
-// 1. click on highlighted color
-// 2. when the highlighted is clicked to highlight the color
-// 3. play the sound of that color when clicked
+// Player turn.
+// Click on highlighted color.
+// When the highlighted is clicked to highlight the color.
+// Play the sound of that color when clicked.
+// Checks what buttons the player has clicked and moves to the next step.
 function playerTurn() {
     buttons.forEach(function(button){
         button.addEventListener('click', function(event){
@@ -144,24 +152,27 @@ function playerTurn() {
             check();
             console.log(`userSequence ${userSequence}`)
             nextStep();
-        })
-    }) 
+        });
+    }); 
 };
 
+// Next step.
+// Compares the players length of the array to the computers length, if the same than adds another button to the sequence.
+// Adds one level.
 function nextStep() {
     if (userSequence.length == computerSequence.length){
         console.log('next')
         userSequence = [];
         next(); 
         level++;
-    }
-}
+    };
+};
 
-// Check function
-//1. to check if the right color was clicked
-//2. if right color was click move to next sequence
-//3. if wrong color was clicked start sequence over
-//4. if in strict mode when wrong color is clicked the game ends
+// Check function.
+// To check if the right color was clicked.
+// If right color was click move to next sequence.
+// If wrong color was clicked start sequence over.
+// If in strict mode when wrong color is clicked the game ends.
 function check() {
     var promise = new Promise((resolve, reject) => {
         var userStage = userSequence.length-1
@@ -191,25 +202,14 @@ function check() {
         };
     });
     promise.then((message) => {
-    console.log(message + 'correct button was pressed');
     }).catch((error) =>{
-    console.log(error + 'wrong button is pressed');
     });
 };
 
-
-
-//Next function
-//1. to move the game process one step futher.
-//2. adding one more button press to the array.
+// Next function
+// To move the game process one step futher.
+// Adding one more button press to the array.
 function next(){
-    
     computerSequence.push(generateRandom())
     computerTurn();        
-}
-
-// game ends
-//1. when the sequence s completed the game ends
-function gameEnds() {
-   
 };
