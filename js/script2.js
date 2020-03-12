@@ -107,12 +107,11 @@ function computerTurn() {
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         };
-    },1500);
+    },2000);
     console.log(`computerSequence ${computerSequence}`)
 };
 
 function playWith(number){
-    //console.log(`Playing with number ${number}`)
     buttons[number-1].classList.add('active')
     setTimeout (function() {
         sounds[number-1].play()

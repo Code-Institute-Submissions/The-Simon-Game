@@ -2,17 +2,16 @@ The Simon Game
 
 The Simon Game is designed as a memory game. The Simon game will play a sequnce of color buttons that lights up and plays
 a sound for the player to follow. The game will start when the player clicks on the start button and the game will start
-with a single color button that will light up and play a sound and player has to click on that color button. If the player
-clicks on the correct button the game will add one more color button to the sequence and the player has to follow. 
+with a single color button that will light up and play a sound, the player has to click on that color button. If the player
+clicks on the correct button the game will add one more color button to the sequence,that the player remember to follow. 
 When the player clicks on the wrong button the sequence will start again and the player can try again. From example if the
 Simon Game sequence plays a red and green button, the player needs to click on the red and green button, if the player
 clicks on a red and yellow button the game will play the same red and green button agian.
 
-The Simon game has two different game Modes a the Normal game Mode and a Strict Mode. The Normal Mode is where the Simon
+The Simon game has two different game Modes, the Normal game Mode and a Strict Mode. The Normal Mode is where the Simon
 game will play a sequence and the player has to the click on the same sequence, if the player clicks the wrong button the
 sequence will start from the beginning of that sequence. The Strict Mode is where the Simon Game will play a sequence and 
-the player has to click on the same sequence, if the player clicks the wrong button in the sequence the game is over and
-the player has to start the game from the beginning. 
+the player has to click on the same sequence, if the player clicks the wrong button in the sequence the game is over. 
 
                                        --------------------------------
 
