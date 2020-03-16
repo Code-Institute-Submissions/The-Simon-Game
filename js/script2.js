@@ -52,14 +52,6 @@ $('#start').click(function() {
     };
 });
 
-// Reset.
-// Reset function that is placed in the start function to reset the game.
-function reset() {
-    resetGame();
-    startGame();
-    playerTurn();
-};
-
 // Strict Game Button
 // To play a strict game.
 $('#strict').click(function() {
@@ -79,9 +71,16 @@ $('#strict').click(function() {
 // Start game.
 // Start to run the computerSequence at a random sequence.
 function startGame(){
-    console.log("Game starts")
     computerSequence.push(generateRandom())
     computerTurn();
+};
+
+// Reset.
+// Reset function that is placed in the start function to reset the game.
+function reset() {
+    resetGame();
+    startGame();
+    playerTurn();
 };
 
 // Reset game.
@@ -107,7 +106,7 @@ function computerTurn() {
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         };
-    },2000);
+    },1500);
     console.log(`computerSequence ${computerSequence}`)
 };
 
@@ -173,36 +172,30 @@ function nextStep() {
 // If wrong color was clicked start sequence over.
 // If in strict mode when wrong color is clicked the game ends.
 function check() {
-    var promise = new Promise((resolve, reject) => {
-        var userStage = userSequence.length-1
-        if (userSequence[userStage] == computerSequence[userStage]){
-            resolve ('Great ');
-            setTimeout (function() {
-                $('#counterBox').text(level);
-                clearTimeout();
-            },750);
-            if (level == 5) {
-                alert ('You Win!!');
-                resetGame();
-            };
-            $('#counterBox').text('Yeah!');
-        }else {
-            reject ('Sucks ');
-            $('#counterBox').text('Oops!');
-            if (strict === true){
-                alert('Game Over!');
-                resetGame();
-            };
-            setTimeout (function() {
-                $('#counterBox').text(level);
-                clearTimeout();
-            },750);
-            computerTurn();       
+    var userStage = userSequence.length-1
+    if (userSequence[userStage] == computerSequence[userStage]){
+        setTimeout (function() {
+            $('#counterBox').text(level);
+            clearTimeout();
+        },750);
+        if (level == 20) {
+            alert ('You Win!!');
+            resetGame();
         };
-    });
-    promise.then((message) => {
-    }).catch((error) =>{
-    });
+        $('#counterBox').text('Yeah!');
+    }else {
+        $('#counterBox').text('Oops!');
+        if (strict === true){
+            alert('Game Over!');
+            resetGame();
+        };
+        setTimeout (function() {
+            $('#counterBox').text(level);
+            clearTimeout();
+        },750); 
+        computerTurn();
+        userSequence = [];      
+    };
 };
 
 // Next function
