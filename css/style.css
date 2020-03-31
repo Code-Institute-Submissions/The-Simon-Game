@@ -72,6 +72,10 @@ body {
 
 }
 
+#red.disable {
+    pointer-events: none;
+}
+
 #blue {
     display: inline-block;
     border: 2px solid white;
@@ -85,6 +89,10 @@ body {
 #blue.active {
     background-color: #b3d9ff;
     border-radius: 10px 60px 10px 10px;
+}
+
+#blue.disable {
+    pointer-events: none;
 }
 
 #yellow {
@@ -102,6 +110,9 @@ body {
     border-radius: 10px 10px 10px 60px;
 }
 
+#yellow.disable {
+    pointer-events: none;
+}
 
 #green {
     display: inline-block;
@@ -116,4 +127,8 @@ body {
 #green.active {
     background-color: #b3ffb3;
     border-radius: 10px 10px 60px 10px;
+}
+
+#green.disable {
+    pointer-events: none;
 }

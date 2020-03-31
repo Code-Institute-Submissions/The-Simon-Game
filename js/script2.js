@@ -112,10 +112,13 @@ function computerTurn() {
 
 function playWith(number){
     buttons[number-1].classList.add('active')
+    buttons[number-1].classList.remove('disable')
     setTimeout (function() {
         sounds[number-1].play()
         buttons[number-1].classList.remove('active')
+        //buttons[number-1].classList.add('disable')
     },750);
+    
 };
 
 function getNumberAttributes(number){
@@ -142,7 +145,6 @@ function playerTurn() {
     buttons.forEach(function(button){
         button.addEventListener('click', function(event){
             let id = event.target.id;
-            console.log(`ID clicked ${id}`)
             let number = colors.indexOf(id)
             let actualNumber = number + 1
             userSequence.push(actualNumber)
