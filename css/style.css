@@ -76,7 +76,6 @@ body {
 #red.active {
     background-color: #ffb3b3;
     border-radius: 60px 10px 10px 10px;
-
 }
 
 #red.disable {
@@ -143,7 +142,8 @@ body {
 /*--  Media query starts  --*/
 
 @media (min-width: 320px) {
-    body {
+
+body {
     background-color: currentColor;
     position: relative;
 }
@@ -201,10 +201,6 @@ body {
 
 /*-- Color Buttons --*/
 
-.squares {
-    display: inline-block;
-}
-
 #red {
     display: inline-block;
     border: 2px solid white;
@@ -217,16 +213,6 @@ body {
 
 }
 
-#red.active {
-    background-color: #ffb3b3;
-    border-radius: 60px 10px 10px 10px;
-
-}
-
-#red.disable {
-    pointer-events: none;
-}
-
 #blue {
     display: inline-block;
     border: 2px solid white;
@@ -234,15 +220,6 @@ body {
     height: 130px;
     width: 130px;
     border-radius: 10px 60px 10px 10px;
-}
-
-#blue.active {
-    background-color: #b3d9ff;
-    border-radius: 10px 60px 10px 10px;
-}
-
-#blue.disable {
-    pointer-events: none;
 }
 
 #yellow {
@@ -255,15 +232,6 @@ body {
     border-radius: 10px 10px 10px 60px;
 }
 
-#yellow.active {
-    background-color: #ffffb3;
-    border-radius: 10px 10px 10px 60px;
-}
-
-#yellow.disable {
-    pointer-events: none;
-}
-
 #green {
     display: inline-block;
     border: 2px solid white;
@@ -273,665 +241,14 @@ body {
     border-radius: 10px 10px 60px 10px;
 }
 
-
-#green.active {
-    background-color: #b3ffb3;
-    border-radius: 10px 10px 60px 10px;
-}
-
-#green.disable {
-    pointer-events: none;
-}
-
 }
 
 @media (min-width: 575px) {
-    /*-- Section starts  --*/
-    /*-- Modal starts  --*/
-    .sign-up {
-        margin-top: 0px;
-    }
-
-    /*-- Modal ends  --*/
-    /*-- Index read more btn starts  --*/
-    .button_readmore {
-        text-align: center;
-        margin-left: 83px;
-        margin-top: 25px;
-        width: 50%;
-        font-family: "Anton";
-        font-size: large;
-        font-stretch: expanded;
-    }
-
-    /*-- Index read more btn ends  --*/
-    .text {
-        height: 123px;
-        width: 320px;
-    }
-
-    .stage {
-        position: relative;
-        width: 100%;
-    }
-
-    .events {
-        position: relative;
-        width: 100%;
-    }
-
-    .members {
-        position: relative;
-        width: 100%;
-    }
-
-    .james {
-        margin-left: 120px;
-        height: 190px;
-        width: 330px
-    }
-
-    .lars {
-        margin-left: 120px;
-        height: 190px;
-        width: 330px
-    }
-
-    .kirk {
-        margin-left: 120px;
-        height: 190px;
-        width: 330px
-    }
-
-    .robert {
-        margin-left: 120px;
-        height: 190px;
-        width: 330px
-    }
-
-    .personal {
-        float: left;
-        text-align: left;
-        margin-left: 90px;
-        margin-right: 90px;
-        font-size: small;
-    }
-
-    p {
-        margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        font-size: small;
-        max-width: max-content;
-    }
-
-    .images {
-        height: 100px;
-        width: 200px;
-        margin: 20px;
-        margin-left: 90px;
-    }
-    /*--  Index table starts  --*/
-    .blackend {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-left: 0;
-        margin-top: 40px;
-        margin-right: 0;
-        height: 359px;
-        background-color: #f8f7f3;
-        z-index: 0;
-    }
-
-    .blackend-overlay {
-        background-color: rgba(0, 0, 0, 0.45);
-        height: 100%;
-        width: 100%;
-        z-index: 5;
-    }
-
-    .center {
-        margin-left: 5px;
-        margin-top: 133px;
-        margin-right: 0px;
-        background-color: #b5b4b100;
-        background-size: cover;
-        color: white;
-        text-align: left;
-        font-size: medium;
-    }
-
-    /*--  Index table ends  --*/
-    /*--  Events table starts  --*/
-    .centerTable {
-        margin: 0 auto;
-    }
-
-    /*--  Events table ends  --*/
-    .row_gallery {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin: 60px auto;
-        margin-top: 20px;
-    }
-
-    .portfolio_lightbox_content {
-        width: 65%;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .large {
-        width: 450px;
-        height: 337px;
-    }
-
-    .closed {
-        position: relative;
-        width: 35px;
-        height: 35px;
-        background-color: #262626;
-        margin-right: 0px;
-        float: right;
-        text-decoration: none;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        opacity: .8;
-    }
-
-    /*--  Iframe starts  --*/
-    iframe {
-        margin-top: 30px;
-        display: block;
-        height: 225px;
-        width: 100%;
-    }
-
-    .music {
-        margin: 10px auto;
-        display: block;
-        height: 225px;
-    }
-
-    /*--  Iframe ends  --*/
-    /*--  Footer starts  --*/
-    .social {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 264px;
-        background-color: #000000;
-    }
-
-    .button_email {
-        margin-top: 10px;
-    }
-
-    .social-links {
-        margin: 10px;
-        height: 90px;
-        width: 100%;
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    .social-gallery {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 264px;
-        background-color: #000000;
-    }
-
-    /*--  Footer ends  --*/
-}
-
-@media (min-width: 768px) {
-    /*-- Section starts  --*/
-    /*-- Index read more btn starts  --*/
-    .button_readmore {
-        text-align: center;
-        margin-left: auto;
-        margin-top: 0;
-        width: 13%;
-        font-family: "Anton";
-        font-size: smaller;
-        font-stretch: expanded;
-    }
-
-    /*-- Index readn more btn ends  --*/
-    .stage {
-        position: relative;
-        width: 100%;
-    }
-
-    .events {
-        position: relative;
-        width: 100%;
-    }
-
-    .members {
-        position: relative;
-        width: 100%;
-    }
-
-    .james {
-        height: 237px;
-        margin: 2px;
-        margin-left: 147px;
-        width: 59%;
-    }
-
-    .lars {
-        height: 237px;
-        margin: 2px;
-        margin-left: 147px;
-        width: 59%;
-    }
-
-    .kirk {
-        height: 237px;
-        margin: 2px;
-        margin-left: 147px;
-        width: 59%;
-    }
-
-    .robert {
-        height: 237px;
-        margin: 2px;
-        margin-left: 147px;
-        width: 59%;
-    }
-
-    .personal {
-        float: left;
-        text-align: left;
-        margin-left: 140px;
-    }
-
-    p {
-        margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        font-size: medium;
-        max-width: max-content;
-    }
-
-    .images {
-        height: 100px;
-        width: 200px;
-        margin: 20px;
-        margin-left: 90px;
-    }
-
-    /*--  Index table starts  --*/
-    .blackend {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-left: 0;
-        margin-top: 40px;
-        margin-right: 0;
-        height: 359px;
-        background-color: #f8f7f3;
-        z-index: 0;
-    }
-
-    .blackend-overlay {
-        background-color: rgba(0, 0, 0, 0.45);
-        height: 100%;
-        width: 100%;
-        z-index: 5;
-    }
-
-    .center {
-        margin-left: 50px;
-        margin-top: 133px;
-        margin-right: 0px;
-        background-size: cover;
-        color: white;
-        text-align: left;
-        font-size: medium;
-    }
-
-    /*--  Index table ends  --*/
-    /*--  Events table starts  --*/
-    .centerTable {
-        margin: 0 auto;
-    }
-
-    /*--  Events table ends  --*/
-    /*--  Gallery starts  --*/
-    .row_gallery {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: 0px;
-        margin-left: 120px;
-    }
-
-    .portfolio_lightbox_content {
-        width: 74%;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .large {
-        width: 550px;
-        height: 412px;
-    }
-
-    .closed {
-        position: relative;
-        width: 35px;
-        height: 35px;
-        background-color: #262626;
-        margin-right: 18px;
-        float: right;
-        text-decoration: none;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        opacity: .8;
-    }
-
-    /*--  Gallery ends  --*/
-    /*--  Iframe starts  --*/
-    iframe {
-        margin-top: 30px;
-        display: block;
-        height: 300px;
-        width: 75%;
-    }
-
-    .music {
-        margin: 10px auto;
-        display: block;
-        height: 300px;
-    }
-
-    /*--  Iframe ends  --*/
-    /*--  Footer starts  --*/
-    .social {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-    }
-
-    .button_email {
-        margin-top: 10px;
-    }
-
-    .social-links {
-        margin: 10px;
-        height: 90px;
-        width: 100%;
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    .social-gallery {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-    }
-
-    /*--  Footer ends  --*/
-}
-
-@media (min-width: 992px) {
-    /*-- Section starts  --*/
-    /*-- Index read more btn starts  --*/
-    .button_readmore {
-        text-align: center;
-        margin-left: auto;
-        margin-top: 0;
-        width: 13%;
-        font-family: "Anton";
-        font-size: small;
-        font-stretch: expanded;
-    }
-
-    /*-- Index read more btn ends  --*/
-    .stage {
-        position: relative;
-        width: 100%;
-    }
-
-    .events {
-        position: relative;
-        width: 100%;
-    }
-
-    .members {
-        position: relative;
-        width: 100%;
-    }
-
-    .james {
-        height: 250px;
-        margin: 2px;
-        margin-left: 70px;
-        width: 40%;
-    }
-
-    .lars {
-        height: 250px;
-        margin: 2px;
-        margin-left: 70px;
-        width: 40%;
-    }
-
-    .kirk {
-        height: 250px;
-        margin: 2px;
-        margin-left: 70px;
-        width: 40%;
-    }
-
-    .robert {
-        height: 250px;
-        margin: 2px;
-        margin-left: 70px;
-        width: 40%;
-    }
-
-    .personal {
-        float: left;
-        text-align: left;
-        margin-left: 30px;
-        margin-right: 0px;
-        font-size: small;
-    }
-
-    p {
-        margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        font-size: medium;
-        max-width: max-content;
-    }
-
-    .images {
-        height: 100px;
-        width: 200px;
-        margin: 20px;
-        margin-left: 90px;
-    }
-
-    /*--  Index table starts  --*/
-    .blackend {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-left: 0;
-        margin-top: 40px;
-        margin-right: 0;
-        height: 420px;
-        background-color: #f8f7f3;
-        z-index: 0;
-    }
-
-    .blackend-overlay {
-        background-color: rgba(0, 0, 0, 0.45);
-        height: 100%;
-        width: 100%;
-        z-index: 5;
-    }
-
-    .center {
-        margin-left: 90px;
-        margin-top: 155px;
-        margin-right: 0;
-        background-size: cover;
-        color: white;
-        text-align: left;
-        font-size: larger;
-    }
-
-    /*--  Index table ends  --*/
-    /*--  Events table starts  --*/
-    .centerTable {
-        margin: 0 auto;
-    }
-
-    /*--  Events table ends  --*/
-    /*--  Gallery starts  --*/
-    .row_gallery {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: 0px;
-        margin-left: 120px;
-    }
-
-    .portfolio_lightbox_content {
-        width: 70%;
-        position: relative;
-    }
-
-    .large {
-        width: 600px;
-        height: 447px;
-    }
-
-    .closed {
-        position: relative;
-        width: 35px;
-        height: 35px;
-        background-color: #262626;
-        margin-right: 80px;
-        float: right;
-        text-decoration: none;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        opacity: .8;
-    }
-
-    /*--  Gallery ends  --*/
-    /*--  Iframe starts  --*/
-    iframe {
-        margin-top: 30px;
-        display: block;
-        height: 450px;
-        width: 75%;
-    }
-
-    .music {
-        margin: 10px auto;
-        display: block;
-        height: 450px;
-    }
-
-    /*--  Iframe ends  --*/
-    /*--  Footer starts --*/
-    .social {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-    }
-
-    .social-links {
-        margin: 10px;
-        height: 90px;
-        width: 100%;
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    .social-gallery {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-    }
-
-    /*--  Footer ends  --*/
-}
-
-@media (min-width: 1200px) {
-   /*-- Body --*/
-
-body {
-    background-color: currentColor;
-    position: relative;
-}
 
 /*-- Buttons --*/
 
 .buttons {
- margin-left: 500px;
- margin-top: 20px;
-}
-
-.startButton {
-    margin: 15px;
-    height: 30px;
-    width: 50px;
-    background-color: black;
-    color: white;
-    font-size: 10px;
-}
-
-.strictButton {
-    margin: 15px;
-    height: 30px;
-    width: 50px;
-    background-color: black;
-    color: white;
-    font-size: 10px;
-}
-
-.onOffButton {
-    margin: 15px;
-    height: 30px;
-    width: 50px;
-    background-color: black;
-    color: white;
-    font-size: 10px;
+    margin-left: 250px;
 }
 
 /*-- Counter --*/
@@ -944,8 +261,8 @@ body {
     font-size: 27px;
     height: 45px;
     width: 80px;
-    margin-left: 576px;
-    margin-top: 243px;
+    margin-left: 335px;
+    margin-top: 217px;
     text-align: center;
     vertical-align: middle;
     line-height: 45px;
@@ -961,38 +278,9 @@ body {
     height: 130px;
     width: 130px;
     margin-top: 100px;
-    margin-left: 450px;
+    margin-left: 360px;
     border-radius: 60px 10px 10px 10px;
 
-}
-
-#red.active {
-    background-color: #ffb3b3;
-    border-radius: 60px 10px 10px 10px;
-
-}
-
-#red.disable {
-    pointer-events: none;
-}
-
-#blue {
-    display: inline-block;
-    border: 2px solid white;
-    background-color: darkblue;
-    height: 130px;
-    width: 130px;
-    margin-top: 100px;
-    border-radius: 10px 60px 10px 10px;
-}
-
-#blue.active {
-    background-color: #b3d9ff;
-    border-radius: 10px 60px 10px 10px;
-}
-
-#blue.disable {
-    pointer-events: none;
 }
 
 #yellow {
@@ -1001,275 +289,307 @@ body {
     background-color: #cc9900;
     height: 130px;
     width: 130px;
-    margin-left: 450px;
+    margin-left: 360px;
     border-radius: 10px 10px 10px 60px;
+}
+
+}
+
+@media (min-width: 768px) {
+  /*-- Buttons --*/
+
+.buttons {
+    margin-left: 250px;
+}
+
+/*-- Counter --*/
+
+.turn {
+    position: absolute;
+    background: white;
+    color: black;
+    font-family: 'Michroma', sans-serif;
+    font-size: 27px;
+    height: 45px;
+    width: 80px;
+    margin-left: 335px;
+    margin-top: 217px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    border-radius: 35px;
+}
+
+/*-- Color Buttons --*/
+
+#red {
+    display: inline-block;
+    border: 2px solid white;
+    background-color: darkred;
+    height: 130px;
+    width: 130px;
+    margin-top: 100px;
+    margin-left: 240px;
+    border-radius: 60px 10px 10px 10px;
+
+}
+
+#yellow {
+    display: inline-block;
+    border: 2px solid white;
+    background-color: #cc9900;
+    height: 130px;
+    width: 130px;
+    margin-left: 240px;
+    border-radius: 10px 10px 10px 60px;
+}
+
+}
+
+@media (min-width: 992px) {
+
+/*-- Buttons --*/
+
+.buttons {
+    margin-left: 410px;
+}
+
+.startButton {
+    margin: 15px;
+    height: 36px;
+    width: 60px;
+    font-size: 12px;
+}
+
+.strictButton {
+    margin: 15px;
+    height: 36px;
+    width: 60px;
+    font-size: 12px;
+}
+
+.onOffButton {
+    margin: 15px;
+    height: 36px;
+    width: 60px;
+    font-size: 12px;
+}   
+
+/*-- Counter --*/
+
+.turn {
+    position: absolute;
+    background: white;
+    color: black;
+    font-family: 'Michroma', sans-serif;
+    font-size: 27px;
+    height: 45px;
+    width: 80px;
+    margin-left: 506px;
+    margin-top: 300px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    border-radius: 35px;
+}
+
+/*-- Color Buttons --*/
+
+#red {
+    display: inline-block;
+    border: 3px solid white;
+    background-color: darkred;
+    height: 180px;
+    width: 180px;
+    margin-top: 140px;
+    margin-left: 360px;
+    border-radius: 85px 15px 15px 15px;
+
+}
+
+#blue {
+    border: 3px solid white;
+    height: 180px;
+    width: 180px;
+    border-radius: 15px 85px 15px 15px;
+}
+
+#yellow {
+    display: inline-block;
+    border: 3px solid white;
+    background-color: #cc9900;
+    height: 180px;
+    width: 180px;
+    margin-left: 360px;
+    border-radius: 15px 15px 15px 85px;
+}
+
+#green {
+    border: 3px solid white;
+    height: 180px;
+    width: 180px;
+    border-radius: 15px 15px 85px 15px;
+}
+
+}
+
+@media (min-width: 1200px) {
+    
+/*-- Buttons --*/
+
+.buttons {
+    margin-left: 500px;
+}
+
+/*-- Counter --*/
+
+.turn {
+    position: absolute;
+    background: white;
+    color: black;
+    font-family: 'Michroma', sans-serif;
+    font-size: 27px;
+    height: 45px;
+    width: 80px;
+    margin-left: 598px;
+    margin-top: 264px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    border-radius: 35px;
+}
+
+/*-- Color Buttons --*/
+
+#red {
+    display: inline-block;
+    border: 3px solid white;
+    background-color: darkred;
+    height: 180px;
+    width: 180px;
+    margin-top: 100px;
+    margin-left: 450px;
+    border-radius: 80px 15px 15px 15px;
+}
+
+#red.active {
+    background-color: #ffb3b3;
+    border-radius: 80px 15px 15px 15px;
+}
+
+#blue.active {
+    background-color: #b3d9ff;
+    border-radius: 15px 80px 15px 15px;
+}
+
+#yellow {
+    display: inline-block;
+    border: 3px solid white;
+    background-color: #cc9900;
+    height: 180px;
+    width: 180px;
+    margin-left: 450px;
+    border-radius: 15px 15px 15px 80px;
 }
 
 #yellow.active {
     background-color: #ffffb3;
-    border-radius: 10px 10px 10px 60px;
+    border-radius: 15px 15px 15px 80px;
 }
-
-#yellow.disable {
-    pointer-events: none;
-}
-
-#green {
-    display: inline-block;
-    border: 2px solid white;
-    background-color: darkgreen;
-    height: 130px;
-    width: 130px;
-    border-radius: 10px 10px 60px 10px;
-}
-
 
 #green.active {
     background-color: #b3ffb3;
-    border-radius: 10px 10px 60px 10px;
-}
-
-#green.disable {
-    pointer-events: none;
+    border-radius: 15px 15px 80px 15px;
 }
 
 }
 
 @media (min-width: 2560px) {
-    /*-- Section starts  --*/
-    /*-- Index read more btn starts  --*/
-    .button_readmore {
-        text-align: center;
-        margin-left: auto;
-        margin-top: 0;
-        margin-bottom: 0;
-        width: 13%;
-        font-family: "Anton";
-        font-size: smaller;
-        font-stretch: expanded;
-    }
 
-    /*-- Index read more btn ends  --*/
-    .stage {
-        position: relative;
-        width: 100%;
-    }
+/*-- Buttons --*/
 
-    .members {
-        position: relative;
-        width: 100%;
-    }
+.buttons {
+    margin-left: 1158px;
+}
 
-    .james {
-        height: 316px;
-        margin-top: 20px;
-        margin-left: 110px;
-        width: 450px;
-        float: left;
-    }
+/*-- Counter --*/
 
-    .lars {
-        height: 316px;
-        margin-top: 20px;
-        margin-left: 110px;
-        width: 450px;
-        float: left;
-    }
+.turn {
+    position: absolute;
+    background: white;
+    color: black;
+    font-family: 'Michroma', sans-serif;
+    font-size: 50px;
+    height: 80px;
+    width: 150px;
+    margin-left: 1216px;
+    margin-top: 575px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 72px;
+    border-radius: 35px;
+}
 
-    .kirk {
-        height: 316px;
-        margin-top: 20px;
-        margin-left: 110px;
-        width: 450px;
-        float: left;
-    }
+/*-- Color Buttons --*/
 
-    .robert {
-        height: 316px;
-        margin-top: 20px;
-        margin-left: 110px;
-        width: 450px;
-        float: left;
-    }
+#red {
+    display: inline-block;
+    border: 6px solid white;
+    background-color: darkred;
+    height: 300px;
+    width: 300px;
+    margin-top: 300px;
+    margin-left: 980px;
+    border-radius: 130px 25px 25px 25px;
 
-    .events {
-        position: relative;
-        width: 100%;
-    }
+}
 
-    .personal {
-        float: right;
-        text-align: left;
-        margin-left: 30px;
-        margin-right: 39px;
-        font-size: large;
-    }
+#red.active {
+    background-color: #ffb3b3;
+    border-radius: 130px 25px 25px 25px;
+}
 
-    p {
-        margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        font-size: large;
-        max-width: max-content;
-    }
+#blue {
+    display: inline-block;
+    border: 6px solid white;
+    background-color: darkblue;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px 130px 25px 25px;
+}
 
-    .images {
-        height: 100px;
-        width: 200px;
-        margin: 20px;
-        margin-left: 90px;
-    }
+#blue.active {
+    background-color: #b3d9ff;
+    border-radius: 25px 130px 25px 25px;
+}
 
-    .button_block_gallery {
-        font-family: "Anton";
-        font-size: large;
-        font-stretch: expanded;
-        color: red;
-        text-align: center;
-        background-color: lightgrey;
-        height: 27px;
-        width: 100%;
-        margin-top: 40px;
-        position: absolute;
-        bottom: 156px;
-        display: none;
-    }
+#yellow {
+    display: inline-block;
+    border: 6px solid white;
+    background-color: #cc9900;
+    height: 300px;
+    width: 300px;
+    margin-left: 980px;
+    border-radius: 25px 25px 25px 130px;
+}
 
-    .button_block {
-        font-family: "Anton";
-        font-size: large;
-        font-stretch: expanded;
-        color: red;
-        text-align: center;
-        background-color: lightgrey;
-        height: 27px;
-        width: 100%;
-        margin-top: 40px;
-    }
+#yellow.active {
+    background-color: #ffffb3;
+    border-radius: 25px 25px 25px 130px;
+}
 
-    /*--  Index table starts  --*/
-    .blackend {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-left: 0;
-        margin-top: 40px;
-        margin-right: 0;
-        height: 500px;
-        background-color: #f8f7f3;
-        z-index: 0;
-    }
+#green {
+    display: inline-block;
+    border: 6px solid white;
+    background-color: darkgreen;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px 25px 130px 25px;
+}
 
-    .blackend-overlay {
-        background-color: rgba(0, 0, 0, 0.45);
-        height: 100%;
-        width: 100%;
-        z-index: 5;
-    }
+#green.active {
+    background-color: #b3ffb3;
+    border-radius: 25px 25px 130px 25px;
+}
 
-    .index-center {
-        margin-right: 244px;
-        margin-left: 0;
-    }
-
-    .center {
-        margin-left: 420px;
-        margin-top: 183px;
-        margin-right: 0;
-        background-size: cover;
-        color: white;
-        text-align: left;
-        font-size: x-large;
-    }
-
-    /*--  Index table ends  --*/
-    /*--  Events table starts  --*/
-    .centerTable {
-        margin: 0 auto;
-    }
-
-    /*--  Events table ends  --*/
-    /*--  Gallery starts  --*/
-    .row_gallery {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: 300px;
-        margin-left: 358px;
-        margin-top: 50px;
-    }
-
-    .large {
-        width: 800px;
-        height: 533px;
-    }
-
-    .portfolio_lightbox_content {
-        width: 32%;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .closed {
-        position: relative;
-        width: 35px;
-        height: 35px;
-        background-color: #262626;
-        margin-right: 20px;
-        float: right;
-        text-decoration: none;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        opacity: .8;
-    }
-
-    /*--  Gallery ends  --*/
-    /*--  Iframe starts  --*/
-    iframe {
-        margin-top: 30px;
-        display: block;
-        height: 500px;
-        width: 75%;
-    }
-
-    .music {
-        margin: 10px auto;
-        display: block;
-        height: 500px;
-    }
-
-    /*--  Iframe ends  --*/
-    /*--  Footer starts  --*/
-    .social-links {
-        margin: 10px;
-        height: 90px;
-        width: 100%;
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    .social {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-    }
-
-    .social-gallery {
-        margin: auto;
-        padding-bottom: 15px;
-        width: 100%;
-        text-align: center;
-        height: 153px;
-        background-color: #000000;
-        bottom: 0;
-        position: absolute;
-    }
-    /*--  Footer ends  --*/
-    /*--  Media query ends  --*/
 }
