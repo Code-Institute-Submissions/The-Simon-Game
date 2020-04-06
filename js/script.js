@@ -70,8 +70,8 @@ $('#strict').click(function() {
 
 // Start game.
 // Start to run the computerSequence at a random sequence.
-function startGame(){
-    computerSequence.push(generateRandom())
+function startGame() {
+    computerSequence.push(generateRandom());
     computerTurn();
 };
 
@@ -100,28 +100,25 @@ function generateRandom() {
 // Loop through computersequence and for each number, play sound and light
 function computerTurn() {
     var counter = 0;
-    var interval = setInterval (function(){
+    var interval = setInterval (function() {
         playWith(computerSequence[counter]);
         counter++;
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         };
-    },1500);
-    console.log(`computerSequence ${computerSequence}`)
+    },1700);
 };
 
-function playWith(number){
-    buttons[number-1].classList.add('active')
-    buttons[number-1].classList.remove('disable')
+function playWith(number) {
+    buttons[number-1].classList.add('active');
+    buttons[number-1].classList.remove('disable');
     setTimeout (function() {
-        sounds[number-1].play()
-        buttons[number-1].classList.remove('active')
-        //buttons[number-1].classList.add('disable')
+        sounds[number-1].play();
+        buttons[number-1].classList.remove('active');
     },750);
-    
 };
 
-function getNumberAttributes(number){
+function getNumberAttributes(number) {
     var vali = [];
     switch (number) {
         case 1:
@@ -142,26 +139,24 @@ function getNumberAttributes(number){
 // Play the sound of that color when clicked.
 // Checks what buttons the player has clicked and moves to the next step.
 function playerTurn() {
-    buttons.forEach(function(button){
-        button.addEventListener('click', function(event){
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
             let id = event.target.id;
-            let number = colors.indexOf(id)
-            let actualNumber = number + 1
-            userSequence.push(actualNumber)
+            let number = colors.indexOf(id);
+            let actualNumber = number + 1;
+            userSequence.push(actualNumber);
             playWith(actualNumber);
             check();
-            console.log(`userSequence ${userSequence}`)
             nextStep();
         });
-    }); 
+    });
 };
 
 // Next step.
 // Compares the players length of the array to the computers length, if the same than adds another button to the sequence.
 // Adds one level.
 function nextStep() {
-    if (userSequence.length == computerSequence.length){
-        console.log('next')
+    if (userSequence.length == computerSequence.length) {
         userSequence = [];
         next(); 
         level++;
@@ -174,8 +169,8 @@ function nextStep() {
 // If wrong color was clicked start sequence over.
 // If in strict mode when wrong color is clicked the game ends.
 function check() {
-    var userStage = userSequence.length-1
-    if (userSequence[userStage] == computerSequence[userStage]){
+    var userStage = userSequence.length-1;
+    if (userSequence[userStage] == computerSequence[userStage]) {
         setTimeout (function() {
             $('#counterBox').text(level);
             clearTimeout();
@@ -187,7 +182,7 @@ function check() {
         $('#counterBox').text('Yeah!');
     }else {
         $('#counterBox').text('Oops!');
-        if (strict === true){
+        if (strict === true) {
             alert('Game Over!');
             resetGame();
         };
@@ -196,14 +191,14 @@ function check() {
             clearTimeout();
         },750); 
         computerTurn();
-        userSequence = [];      
+        userSequence = [];   
     };
 };
 
 // Next function
 // To move the game process one step futher.
 // Adding one more button press to the array.
-function next(){
-    computerSequence.push(generateRandom())
+function next() {
+    computerSequence.push(generateRandom());
     computerTurn();        
 };
