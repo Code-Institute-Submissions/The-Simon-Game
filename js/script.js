@@ -23,10 +23,10 @@ $('#power').click(function() {
     onOffButton = (onOffButton === false);
     if (onOffButton) {
         $('#power').css('background-color', 'green');
-        $('#power').css('color', 'black');
+        $('#power').css('color', 'white');
         $('#counterBox').text('--');
     } else {
-        $('#power').css('background-color', 'black');
+        $('#power').css('background-color', 'red');
         $('#power').css('color', 'white');
         $('#start').css('background-color', 'black');
         $('#start').css('color', 'white');
