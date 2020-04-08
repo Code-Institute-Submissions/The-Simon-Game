@@ -12,20 +12,18 @@ body {
 
 h1{
     text-align: center;
-    font-size-adjust: auto;
+    font-size: 50px;
+    margin: 5px;
 }
 
 h2{
     margin: 5px;
     text-align: center;
-    font-size-adjust: auto;
 }
 
 ul{
     text-align: center;
-    font-size-adjust: auto;
     list-style-type: none;
-    float: inline-start;
 }
 
 /*-- Body Ends --*/
@@ -599,7 +597,7 @@ ul{
 /*-- Buttons Starts --*/
 
 .buttons {
-    margin-left: 1075px;
+    margin-left: 1045px;
 }
 
 .startButton {
@@ -640,8 +638,8 @@ ul{
     font-size: 50px;
     height: 80px;
     width: 150px;
-    margin-left: 1216px;
-    margin-top: 575px;
+    margin-left: 1200px;
+    margin-top: 452px;
     text-align: center;
     vertical-align: middle;
     line-height: 72px;
@@ -658,8 +656,8 @@ ul{
     background-color: darkred;
     height: 300px;
     width: 300px;
-    margin-top: 300px;
-    margin-left: 980px;
+    margin-top: 170px;
+    margin-left: 960px;
     border-radius: 130px 25px 25px 25px;
 
 }
@@ -695,7 +693,7 @@ ul{
     background-color: #cc9900;
     height: 300px;
     width: 300px;
-    margin-left: 980px;
+    margin-left: 960px;
     border-radius: 25px 25px 25px 130px;
 }
 

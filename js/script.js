@@ -111,7 +111,6 @@ function computerTurn() {
 
 function playWith(number) {
     buttons[number-1].classList.add('active');
-    buttons[number-1].classList.remove('disable')
     setTimeout (function() {
         sounds[number-1].play();
         buttons[number-1].classList.remove('active');
