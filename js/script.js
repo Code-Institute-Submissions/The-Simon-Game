@@ -33,7 +33,7 @@ $('#power').click(function() {
         $('#strict').css('background-color', 'black');
         $('#strict').css('color', 'white');
         $('#counterBox').text('');
-    };
+    }
     start = false;
     strict = false;
 });
@@ -48,8 +48,8 @@ $('#start').click(function() {
             $('#start').css('color', 'black');
             $('#counterBox').text('1');
             reset();
-        };
-    };
+        }
+    }
 });
 
 // Strict Game Button
@@ -65,7 +65,7 @@ $('#strict').click(function() {
     } else {
        $('#strict').css('background-color', 'black');
        $('#strict').css('color', 'white');
-    };
+    }
 });
 
 // Start game.
@@ -73,7 +73,7 @@ $('#strict').click(function() {
 function startGame() {
     computerSequence.push(generateRandom());
     computerTurn();
-};
+}
 
 // Reset.
 // Reset function that is placed in the start function to reset the game.
@@ -81,7 +81,7 @@ function reset() {
     resetGame();
     startGame();
     playerTurn();
-};
+}
 
 // Reset game.
 // resetGame will clear both Sequences and start the level at level 1.
@@ -89,12 +89,12 @@ function resetGame() {
     computerSequence = [];
     userSequence = [];
     level = 1;
-};
+}
 
 // Generate a random color sequence every time the game starts
 function generateRandom() {
     return Math.floor(Math.random() * 4) + 1;
-};
+}
 
 // Computer turn.
 // Loop through computersequence and for each number, play sound and light
@@ -105,9 +105,9 @@ function computerTurn() {
         counter++;
         if (counter >= computerSequence.length) {
             clearInterval(interval);
-        };
+        }
     },1700);
-};
+}
 
 function playWith(number) {
     buttons[number-1].classList.add('active');
@@ -115,22 +115,25 @@ function playWith(number) {
         sounds[number-1].play();
         buttons[number-1].classList.remove('active');
     },750);
-};
+}
 
 function getNumberAttributes(number) {
     var vali = [];
     switch (number) {
         case 1:
             vali = [sounds[0], buttons[0], colors[0]];
+            break;
         case 2:
             vali =  [sounds[1], buttons[1], colors[1]];
+            break;
         case 3:
             vali =  [sounds[2], buttons[2], colors[2]];
+            break;
         case 4:
             vali =  [sounds[3], buttons[3], colors[3]];
-    };
+    }
     return vali;
-};
+}
 
 // Player turn.
 // Click on highlighted color.
@@ -149,7 +152,7 @@ function playerTurn() {
             nextStep();
         });
     });
-};
+}
 
 // Next step.
 // Compares the players length of the array to the computers length, if the same than adds another button to the sequence.
@@ -159,8 +162,8 @@ function nextStep() {
         userSequence = [];
         next(); 
         level++;
-    };
-};
+    }
+}
 
 // Check function.
 // To check if the right color was clicked.
@@ -177,22 +180,22 @@ function check() {
         if (level == 20) {
             alert ('You Win!!');
             resetGame();
-        };
+        }
         $('#counterBox').text('Yeah!');
     }else {
         $('#counterBox').text('Oops!');
         if (strict === true) {
             alert('Game Over!');
             resetGame();
-        };
+        }
         setTimeout (function() {
             $('#counterBox').text(level);
             clearTimeout();
         },750); 
         computerTurn();
         userSequence = [];   
-    };
-};
+    }
+}
 
 // Next function
 // To move the game process one step futher.
@@ -200,4 +203,4 @@ function check() {
 function next() {
     computerSequence.push(generateRandom());
     computerTurn();        
-};
+}

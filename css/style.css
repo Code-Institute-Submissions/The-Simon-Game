@@ -102,10 +102,6 @@ ul{
     border-radius: 60px 10px 10px 10px;
 }
 
-#red.disable {
-    pointer-events: none;
-}
-
 /*-- Red Button Ends --*/
 /*-- Blue Button Starts --*/
 
@@ -122,10 +118,6 @@ ul{
 #blue.active {
     background-color: #b3d9ff;
     border-radius: 10px 60px 10px 10px;
-}
-
-#blue.disable {
-    pointer-events: none;
 }
 
 /*-- Blue Button Ends --*/
@@ -146,10 +138,6 @@ ul{
     border-radius: 10px 10px 10px 60px;
 }
 
-#yellow.disable {
-    pointer-events: none;
-}
-
 /*-- Yellow Button Ends --*/
 /*-- Green Button Starts --*/
 
@@ -167,10 +155,6 @@ ul{
     border-radius: 10px 10px 60px 10px;
 }
 
-#green.disable {
-    pointer-events: none;
-}
-
 /*-- Green Button Ends --*/
 /*-- Color Buttons Starts --*/
 /*-- Media Query Starts --*/
@@ -180,7 +164,7 @@ ul{
 /*-- Buttons Starts --*/
 
 .buttons {
-    margin-left: 35px;
+    margin-left: 85px;
 }
 
 .startButton {
@@ -221,7 +205,7 @@ ul{
     font-size: 27px;
     height: 45px;
     width: 80px;
-    margin-left: 116px;
+    margin-left: 167px;
     margin-top: 125px;
     text-align: center;
     vertical-align: middle;
@@ -240,7 +224,7 @@ ul{
     height: 130px;
     width: 130px;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 70px;
     border-radius: 60px 10px 10px 10px;
 
 }
@@ -267,7 +251,7 @@ ul{
     background-color: #cc9900;
     height: 130px;
     width: 130px;
-    margin-left: 20px;
+    margin-left: 70px;
     border-radius: 10px 10px 10px 60px;
 }
 
@@ -412,7 +396,7 @@ ul{
 /*-- Buttons Starts --*/
 
 .buttons {
-    margin-left: 410px;
+    margin-left: 361px;
 }
 
 .startButton {
@@ -447,8 +431,8 @@ ul{
     font-size: 27px;
     height: 45px;
     width: 80px;
-    margin-left: 506px;
-    margin-top: 300px;
+    margin-left: 460px;
+    margin-top: 228px;
     text-align: center;
     vertical-align: middle;
     line-height: 45px;
@@ -465,8 +449,13 @@ ul{
     background-color: darkred;
     height: 180px;
     width: 180px;
-    margin-top: 140px;
-    margin-left: 360px;
+    margin-top: 60px;
+    margin-left: 310px;
+    border-radius: 85px 15px 15px 15px;
+}
+
+#red.active {
+    background-color: #ffb3b3;
     border-radius: 85px 15px 15px 15px;
 }
 
@@ -480,6 +469,11 @@ ul{
     border-radius: 15px 85px 15px 15px;
 }
 
+#blue.active {
+    background-color: #b3d9ff;
+    border-radius: 15px 85px 15px 15px;
+}
+
 /*-- Blue Button Ends --*/
 /*-- Yellow Button Starts --*/
 
@@ -489,7 +483,12 @@ ul{
     background-color: #cc9900;
     height: 180px;
     width: 180px;
-    margin-left: 360px;
+    margin-left: 310px;
+    border-radius: 15px 15px 15px 85px;
+}
+
+#yellow.active {
+    background-color: #ffffb3;
     border-radius: 15px 15px 15px 85px;
 }
 
@@ -501,6 +500,11 @@ ul{
     height: 180px;
     width: 180px;
     border-radius: 15px 15px 85px 15px;
+}
+
+#green.active {
+    background-color: #b3ffb3;
+    border-radius: 15px 15px 85px 10px;
 }
 
 /*-- Green Button Ends --*/
