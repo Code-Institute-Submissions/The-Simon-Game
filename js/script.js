@@ -17,9 +17,10 @@ var greenButton = document.getElementById('green');
 var buttons = [redButton, blueButton, yellowButton, greenButton];
 var colors = ['red', 'blue', 'yellow', 'green'];
 
-// Power Button.
-// Clicking on the power button will enable you to click on the start and strict buttons.
-$('#power').click(function() {
+/* Power Button.
+   Clicking on the power button will enable you to click on the start and strict buttons.
+*/
+ $('#power').click(function() {
     onOffButton = (onOffButton === false);
     if (onOffButton) {
         $('#power').css('background-color', 'green');
@@ -38,9 +39,10 @@ $('#power').click(function() {
     strict = false;
 });
 
-// Start Game Button.
-// To start the game or resets the game to start a new game. 
-$('#start').click(function() {
+/* Start Game Button.
+   To start the game or resets the game to start a new game. 
+*/
+   $('#start').click(function() {
     if (onOffButton) {
         start = true;
         if (start) {
@@ -52,9 +54,10 @@ $('#start').click(function() {
     }
 });
 
-// Strict Game Button
-// To play a strict game.
-$('#strict').click(function() {
+/* Strict Game Button
+   To play a strict game.
+*/
+   $('#strict').click(function() {
     strict = (strict === false);
     if (onOffButton && start) {
        strict = true;
@@ -68,23 +71,26 @@ $('#strict').click(function() {
     }
 });
 
-// Start game.
-// Start to run the computerSequence at a random sequence.
-function startGame() {
+/* Start game.
+   Start to run the computerSequence at a random sequence.
+*/
+   function startGame() {
     computerSequence.push(generateRandom());
     computerTurn();
 }
 
-// Reset.
-// Reset function that is placed in the start function to reset the game.
+/* Reset.
+  Reset function that is placed in the start function to reset the game.
+*/
 function reset() {
     resetGame();
     startGame();
     playerTurn();
 }
 
-// Reset game.
-// resetGame will clear both Sequences and start the level at level 1.
+/* Reset game.
+   ResetGame will clear both Sequences and start the level at level 1.
+*/
 function resetGame() {
     computerSequence = [];
     userSequence = [];
@@ -96,8 +102,9 @@ function generateRandom() {
     return Math.floor(Math.random() * 4) + 1;
 }
 
-// Computer turn.
-// Loop through computersequence and for each number, play sound and light
+/* Computer turn.
+   Loop through computersequence and for each number, play sound and light
+*/
 function computerTurn() {
     var counter = 0;
     var interval = setInterval (function() {
@@ -122,24 +129,22 @@ function getNumberAttributes(number) {
     switch (number) {
         case 1:
             vali = [sounds[0], buttons[0], colors[0]];
-            break;
         case 2:
             vali =  [sounds[1], buttons[1], colors[1]];
-            break;
         case 3:
             vali =  [sounds[2], buttons[2], colors[2]];
-            break;
         case 4:
             vali =  [sounds[3], buttons[3], colors[3]];
     }
     return vali;
 }
 
-// Player turn.
-// Click on highlighted color.
-// When the highlighted is clicked to highlight the color.
-// Play the sound of that color when clicked.
-// Checks what buttons the player has clicked and moves to the next step.
+/* Player turn.
+   Click on highlighted color.
+   When the highlighted is clicked to highlight the color.
+   Play the sound of that color when clicked.
+   Checks what buttons the player has clicked and moves to the next step.
+*/
 function playerTurn() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
@@ -154,9 +159,10 @@ function playerTurn() {
     });
 }
 
-// Next step.
-// Compares the players length of the array to the computers length, if the same than adds another button to the sequence.
-// Adds one level.
+/* Next step.
+   Compares the players length of the array to the computers length, if the same than adds another button to the sequence
+   Adds one level.
+*/
 function nextStep() {
     if (userSequence.length == computerSequence.length) {
         userSequence = [];
@@ -165,11 +171,12 @@ function nextStep() {
     }
 }
 
-// Check function.
-// To check if the right color was clicked.
-// If right color was click move to next sequence.
-// If wrong color was clicked start sequence over.
-// If in strict mode when wrong color is clicked the game ends.
+/* Check function.
+   To check if the right color was clicked.
+   If right color was click move to next sequence.
+   If wrong color was clicked start sequence over.
+   If in strict mode when wrong color is clicked the game ends.
+*/
 function check() {
     var userStage = userSequence.length-1;
     if (userSequence[userStage] == computerSequence[userStage]) {
@@ -197,9 +204,10 @@ function check() {
     }
 }
 
-// Next function
-// To move the game process one step futher.
-// Adding one more button press to the array.
+/* Next function
+   To move the game process one step futher.
+   Adding one more button press to the array.
+*/
 function next() {
     computerSequence.push(generateRandom());
     computerTurn();        
