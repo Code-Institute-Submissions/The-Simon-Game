@@ -95,6 +95,7 @@ function resetGame() {
     computerSequence = [];
     userSequence = [];
     level = 1;
+    counter = 1;
 }
 
 // Generate a random color sequence every time the game starts
@@ -184,21 +185,21 @@ function check() {
             $('#counterBox').text(level);
             clearTimeout();
         },750);
+        $('#counterBox').text('Yeah!');
         if (level == 20) {
             alert ('You Win!!');
             resetGame();
         }
-        $('#counterBox').text('Yeah!');
     }else {
+        setTimeout (function() {
+            $('#counterBox').text(level);
+            clearTimeout();
+        },750); 
         $('#counterBox').text('Oops!');
         if (strict === true) {
             alert('Game Over!');
             resetGame();
         }
-        setTimeout (function() {
-            $('#counterBox').text(level);
-            clearTimeout();
-        },750); 
         computerTurn();
         userSequence = [];   
     }
