@@ -191,7 +191,7 @@ function check() {
             clearTimeout();
         },750);
         $('#counterBox').text('Yeah!');
-        if (level == 20) {
+        if (level == 5) {
             winner();
         }
     }else {
@@ -221,12 +221,15 @@ function next() {
     computerTurn();        
 }
 
+/*Winner function
+  Checks if the userSequence.length is the same as the level to
+  make them a winner and resets the game.
+*/
 function winner() {
     if (userSequence.length === level) {
         win = true;
         setTimeout (function() {
             alert ('You Win!!');
-            $('#counterBox').text('Win!');
             clearTimeout();
         },800);
         reset();
