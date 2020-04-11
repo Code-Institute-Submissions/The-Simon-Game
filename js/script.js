@@ -1,7 +1,8 @@
 //letibles
 let onOffButton = false; 
 let start = false; 
-let strict = false; 
+let strict = false;
+let win = false; 
 let computerSequence = [];
 let userSequence = [];
 let level = 0;
@@ -74,7 +75,7 @@ let colors = ['red', 'blue', 'yellow', 'green'];
 /* Start game.
    Start to run the computerSequence at a random sequence.
 */
-   function startGame() {
+function startGame() {
     computerSequence.push(generateRandom());
     computerTurn();
 }
@@ -94,6 +95,7 @@ function reset() {
 function resetGame() {
     computerSequence = [];
     userSequence = [];
+    win = false;
     level = 1;
     counter = 1;
 }
@@ -189,13 +191,8 @@ function check() {
             clearTimeout();
         },750);
         $('#counterBox').text('Yeah!');
-        if (level === 5) {
-            setTimeout (function() {
-                alert ('You Win!!');
-                $('#counterBox').text('Win!');
-                clearTimeout();
-            },800);
-            reset();
+        if (level == 20) {
+            winner();
         }
     }else {
         setTimeout (function() {
@@ -222,4 +219,16 @@ function check() {
 function next() {
     computerSequence.push(generateRandom());
     computerTurn();        
+}
+
+function winner() {
+    if (userSequence.length === level) {
+        win = true;
+        setTimeout (function() {
+            alert ('You Win!!');
+            $('#counterBox').text('Win!');
+            clearTimeout();
+        },800);
+        reset();
+    }
 }
