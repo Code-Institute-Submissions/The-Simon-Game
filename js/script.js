@@ -1,21 +1,21 @@
-//Varibles
-var onOffButton = false; 
-var start = false; 
-var strict = false; 
-var computerSequence = [];
-var userSequence = [];
-var level = 0;
-var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
-var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
-var greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
-var sounds = [redSound, blueSound, yellowSound, greenSound];
-var redButton = document.getElementById('red');
-var blueButton = document.getElementById('blue');
-var yellowButton = document.getElementById('yellow');
-var greenButton = document.getElementById('green');
-var buttons = [redButton, blueButton, yellowButton, greenButton];
-var colors = ['red', 'blue', 'yellow', 'green'];
+//letibles
+let onOffButton = false; 
+let start = false; 
+let strict = false; 
+let computerSequence = [];
+let userSequence = [];
+let level = 0;
+let redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+let blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+let yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+let greenSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+let sounds = [redSound, blueSound, yellowSound, greenSound];
+let redButton = document.getElementById('red');
+let blueButton = document.getElementById('blue');
+let yellowButton = document.getElementById('yellow');
+let greenButton = document.getElementById('green');
+let buttons = [redButton, blueButton, yellowButton, greenButton];
+let colors = ['red', 'blue', 'yellow', 'green'];
 
 /* Power Button.
    Clicking on the power button will enable you to click on the start and strict buttons.
@@ -107,14 +107,15 @@ function generateRandom() {
    Loop through computersequence and for each number, play sound and light
 */
 function computerTurn() {
-    var counter = 0;
-    var interval = setInterval (function() {
+    let counter = 0;
+    let interval = setInterval (function() {
         playWith(computerSequence[counter]);
         counter++;
         if (counter >= computerSequence.length) {
             clearInterval(interval);
         }
     },1700);
+    console.log('computerTurn');
 }
 
 function playWith(number) {
@@ -123,10 +124,11 @@ function playWith(number) {
         sounds[number-1].play();
         buttons[number-1].classList.remove('active');
     },750);
+    console.log('playwith');
 }
 
 function getNumberAttributes(number) {
-    var vali = [];
+    let vali = [];
     switch (number) {
         case 1:
             vali = [sounds[0], buttons[0], colors[0]];
@@ -158,6 +160,7 @@ function playerTurn() {
             nextStep();
         });
     });
+    console.log('playerTurn');
 }
 
 /* Next step.
@@ -179,16 +182,20 @@ function nextStep() {
    If in strict mode when wrong color is clicked the game ends.
 */
 function check() {
-    var userStage = userSequence.length-1;
+    let userStage = userSequence.length-1;
     if (userSequence[userStage] == computerSequence[userStage]) {
         setTimeout (function() {
             $('#counterBox').text(level);
             clearTimeout();
         },750);
         $('#counterBox').text('Yeah!');
-        if (level == 20) {
-            alert ('You Win!!');
-            resetGame();
+        if (level === 5) {
+            setTimeout (function() {
+                alert ('You Win!!');
+                $('#counterBox').text('Win!');
+                clearTimeout();
+            },800);
+            reset();
         }
     }else {
         setTimeout (function() {
@@ -197,8 +204,11 @@ function check() {
         },750); 
         $('#counterBox').text('Oops!');
         if (strict === true) {
-            alert('Game Over!');
-            resetGame();
+            setTimeout (function() {
+                alert('Game Over!');
+                clearTimeout();
+            },800);
+            reset();
         }
         computerTurn();
         userSequence = [];   
