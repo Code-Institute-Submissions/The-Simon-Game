@@ -1,4 +1,4 @@
-//letibles
+//Variables
 let onOffButton = false; 
 let start = false; 
 let strict = false;
@@ -162,7 +162,6 @@ function playerTurn() {
             nextStep();
         });
     });
-    console.log('playerTurn');
 }
 
 /* Next step.
@@ -217,6 +216,7 @@ function check() {
    Adding one more button press to the array.
 */
 function next() {
+    for (var i = 0; userSequence = 20; i++);
     computerSequence.push(generateRandom());
     computerTurn();        
 }

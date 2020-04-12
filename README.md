@@ -69,16 +69,67 @@ Google Apis: The font styles in the Simon Game.
 Testing
 
 Does the game start when pressed the start button?
+
+Once I have clicked on the the start button, the game start playing the first colored button.
+The color button lights up and plays the sound assigned to the button.
+
 Does the levels section go up each time your on a new level?
+
+Everytime the I played the correct sequence of colored button the counter in the center goes up by one. 
+
 Does the game play the random sequence for you to then press the correct button?
+
+The sequence starts and plays one colored button for me to press and informs me that it was correct.
+
 Does the game move on to the next level when completed last level correctly?
+
+The game indicates that I have played the correct button and adds one more to the sequence and shows the level has
+increased on the counter.
+
 Does the game show an alert when failed the game?
+
+The game will indicate that II have played the wrong button by displaying 'Oops' on the counter and starts the
+sequence again.
+
 Does the game show an alert when the game is won?
+
+Once you have reached a level of 20 on the counter and you have correctly played the sequence, the game will alert
+you that you have won.
+
 Does the game allow you to restart once you have either won or lost the game?
+
+Either way winning or losing the game will restart with a new sequence.
+
 Does the sound effects work when a button is pressed?
+
+Every colored button has a sound assigned to them and everytime the game or I play the colored buttons the sound
+beeps for a few seconds.
+
 Do the buttons flash when pressed or called by the sequence?
-Does the hard mode differ to the medium mode?
+
+Every colored button does flash when when the sequence plays or when I press on the colored button.
+
+Does the Strict mode differ to the Normal mode?
+
+When I played the strict mode everytime I played the wrong colored button the game stop and alerts me that I have
+lost the game and restarts with a new game.
+WHen I played the normal mode everytime I played the wrong colored button the game started the sequence over for 
+e to try again.
+
 Does only one button flash at a time?
+
+With the sequence everytime a colored button flashes only one flashes at once and then the next one colored button
+will flash.
+
+
+
+While doing the testing of playing the game, I have noticed that when I reset the game by pushing the Start button
+the does not work correctly. I have noticed that the first colored button in the sequence starts to play and
+I play the first colored button the game moves on to the next sequence, once the sequence has played. I tried
+to play the next first colored button in the next sequence. the computer starts to play the sequence again, before 
+I played the next colored button in the sequence. 
+
+
 
                                    --------------------------------
 
