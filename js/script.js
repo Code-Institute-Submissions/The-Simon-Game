@@ -117,7 +117,6 @@ function computerTurn() {
             clearInterval(interval);
         }
     },1700);
-    console.log('computerTurn');
 }
 
 function playWith(number) {
@@ -126,7 +125,6 @@ function playWith(number) {
         sounds[number-1].play();
         buttons[number-1].classList.remove('active');
     },750);
-    console.log('playwith');
 }
 
 function getNumberAttributes(number) {
