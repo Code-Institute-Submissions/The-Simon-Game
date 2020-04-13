@@ -130,6 +130,14 @@ of undefined', this error will keep on running until I refresh the browser.
 
                                    --------------------------------
 
+Deployment
+
+Open up GitHub, ShawnAhls/The-Simon-Game going to setting, click on setting and scrolling down to Github pages.
+once at GitHub Pages source, click on the drop down menu and clciked on the gh-pages, which created the following
+link 'https://shawnahls.github.io/The-Simon-Game/'
+
+                                   --------------------------------
+
 
 Credits
 
