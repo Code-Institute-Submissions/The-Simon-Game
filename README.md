@@ -114,7 +114,7 @@ Does the Strict mode differ to the Normal mode?
 When I played the strict mode everytime I played the wrong colored button the game stop and alerts me that I have
 lost the game and restarts with a new game.
 WHen I played the normal mode everytime I played the wrong colored button the game started the sequence over for 
-e to try again.
+me to try again.
 
 Does only one button flash at a time?
 
@@ -122,12 +122,12 @@ With the sequence everytime a colored button flashes only one flashes at once an
 will flash.
 
 
-
-While doing the testing of playing the game, I have noticed that when I reset the game by pushing the Start button
-the does not work correctly. I have noticed that the first colored button in the sequence starts to play and
-I play the first colored button the game moves on to the next sequence, once the sequence has played. I tried
-to play the next first colored button in the next sequence. the computer starts to play the sequence again, before 
-I played the next colored button in the sequence. 
+During testing of the game, I will play the game and want to reset the game by pressing the start button. The Computer
+sequence starts from the beginnig again, I can press the first sequence of colored button and the game will add another
+colored button to the sequence. Once I have pressed the first colorded button of that sequence, the Computer sequence
+will start again and add the next sequence or displays an error 'Uncaught TypeError: Cannot read property 'classList'
+of undefined', this error will keep on running until I refresh the browser.
+ 
 
 
 

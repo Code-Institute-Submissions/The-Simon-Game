@@ -216,7 +216,6 @@ function check() {
    Adding one more button press to the array.
 */
 function next() {
-    for (var i = 0; userSequence = 20; i++);
     computerSequence.push(generateRandom());
     computerTurn();        
 }
