@@ -120,13 +120,18 @@ Does only one button flash at a time?
 With the sequence everytime a colored button flashes only one flashes at once and then the next one colored button
 will flash.
 
+During testing of the game, I will play the game, fininshing the game and restarts or being by resetting the game by
+pressing the start button. The Computer sequence starts from the beginnig again, I can press the first sequence
+of colored button and the game will add another colored button to the sequence. Once I have pressed the first
+colorded button of that sequence, the Computer sequence will start again and add the next sequence or displays an
+error 'Uncaught TypeError: Cannot read property 'classList' of undefined', this error will keep on running until
+I refresh the browser.
 
-During testing of the game, I will play the game and want to reset the game by pressing the start button. The Computer
-sequence starts from the beginnig again, I can press the first sequence of colored button and the game will add another
-colored button to the sequence. Once I have pressed the first colorded button of that sequence, the Computer sequence
-will start again and add the next sequence or displays an error 'Uncaught TypeError: Cannot read property 'classList'
-of undefined', this error will keep on running until I refresh the browser.
- 
+When I ask other people to test the simon game some of them said that the game works fine and some of them found the 
+same as what I have found.
+
+I will be looking into the reason why I am having this error, try and get the game running correct after restartng
+the game.
 
                                    --------------------------------
 
@@ -137,7 +142,6 @@ once at GitHub Pages source, click on the drop down menu and clciked on the gh-p
 link 'https://shawnahls.github.io/The-Simon-Game/'
 
                                    --------------------------------
-
 
 Credits
 

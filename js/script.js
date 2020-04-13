@@ -190,7 +190,7 @@ function check() {
             clearTimeout();
         },750);
         $('#counterBox').text('Yeah!');
-        if (level == 5) {
+        if (level == 20) {
             winner();
         }
     }else {
